@@ -1,6 +1,6 @@
 import firebase from "firebase";
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyArr8Ipyd-antbmGz8ZqmOL2bpokxlAGrg",
   authDomain: "in-good-hands-784be.firebaseapp.com",
   databaseURL: "https://in-good-hands-784be.firebaseio.com",
@@ -11,7 +11,4 @@ const firebaseConfig = {
   measurementId: "G-298LGBWCB8"
 };
 
-
-
-firebase.initializeApp(firebaseConfig);
 export default firebase;

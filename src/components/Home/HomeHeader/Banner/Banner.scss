@@ -1,0 +1,60 @@
+.home__header-banner{
+  height: 80%;
+  vertical-align: center;
+  
+  flex: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .home__header-banner-content{
+
+    
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;;
+    align-items: space-between;
+    font-family: $font-base;
+
+  h1{
+    text-align: center;
+    color: $main-grey;
+    width: auto;
+    font-size: 1.75rem;
+    font-weight: 200;
+    margin-bottom: 5rem;
+    
+  }
+  .header__buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+  a{
+    width: 45%;
+    height: auto;
+    border: 1px solid $main-grey;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: $main-grey;
+    
+    
+  }
+  a:nth-oftype(2){
+    width: 45%;
+    height: auto;
+    border: 1px solid $main-grey;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 100;
+    
+  }
+}
+}
+}

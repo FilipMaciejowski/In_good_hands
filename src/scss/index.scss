@@ -1,7 +1,9 @@
 @import 'reset';
 @import 'colors';
 @import 'fonts';
-@import 'main';
+@import '../components/Home/Home.scss';
+@import '../components/Home/HomeHeader/HomeHeader.scss';
+@import '../components/Home/HomeHeader/Banner/Banner.scss';
 
 
 

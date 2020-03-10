@@ -1,0 +1,30 @@
+.home__header-container{
+  width: 95vw;
+  height: auto;
+  
+  display: flex;
+  
+  .home__header-right-side{
+    width: 50%;
+    height: auto;
+    order: 1;
+    display: flex;
+    flex-direction: column;
+
+    
+    
+    .right__side-bottom-nav{
+      text-align: right;
+      flex:1;
+      vertical-align: center;
+    }
+  }
+
+  .home__header-left-side{
+    width: 50%;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+}
