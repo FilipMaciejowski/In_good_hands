@@ -9,6 +9,7 @@ import HomeContact from "./HomeContact";
 import HomeFooter from "./HomeFooter";
 import { Element } from "react-scroll";
 
+
 const Home = () => {
   return (
     <div className="home__container">
