@@ -1,0 +1,14 @@
+.main__navigation-container{
+  color: $main-grey-dark;
+  width: 40rem;
+  .main__navigation-links{
+    display: flex;
+    justify-content: space-between;
+  }
+  a{
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 0.95rem; 
+  }
+  
+}

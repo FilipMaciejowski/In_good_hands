@@ -1,7 +1,7 @@
 .home__header-container{
+  margin-top: none;
   width: 95vw;
   height: auto;
-  
   display: flex;
   
   .home__header-right-side{
@@ -11,8 +11,6 @@
     display: flex;
     flex-direction: column;
 
-    
-    
     .right__side-bottom-nav{
       text-align: right;
       flex:1;

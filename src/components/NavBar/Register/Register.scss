@@ -1,0 +1,24 @@
+
+.registration__menu{
+  display: flex;
+  justify-content: flex-end;
+.registration__menu-main{
+  width: 50%;;
+  display: flex;
+  justify-content: space-between;
+
+  a{
+    font-size: 0.85rem;
+    text-decoration: none;
+    font-family: $font-base;
+    color: $main-grey;
+    padding: 1rem;
+  }
+
+}
+}
+
+.active {
+      border: 1px solid $main-yellow;
+}
+

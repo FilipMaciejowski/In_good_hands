@@ -3,8 +3,8 @@ import { Link } from "react-scroll";
 
 const Menu = () => {
   return (
-    <div className="home__header-right-side">
-      <div className="right__side-bottom-nav">
+    <div className="main__navigation-container">
+      <div className="main__navigation-links">
         <Link to="start" spy={true} smooth={true} duration={500}>
           Start
         </Link>
