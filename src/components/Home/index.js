@@ -2,7 +2,7 @@ import React from "react";
 
 import HomeHeader from "./HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns";
-import HomeFourSteps from "./HomeFourSteps";
+import HomeSimpleSteps from "./HomeSimpleSteps";
 import HomeAboutUs from "./HomeAboutUs";
 import HomeWeHelp from "./HomeWeHelp";
 import HomeContact from "./HomeContact";
@@ -18,7 +18,7 @@ const Home = () => {
         <HomeThreeColumns />
       </Element>
       <Element name="idea">
-        <HomeFourSteps />
+        <HomeSimpleSteps />
       </Element>
       <Element name="about">
         <HomeAboutUs />

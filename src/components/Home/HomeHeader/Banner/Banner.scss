@@ -26,6 +26,9 @@
   svg{
   width: 100%;
   margin-bottom: 2.5rem;
+  g{
+      stroke: lighten($main-grey-dark, 10%);
+    }
   
 }
 
@@ -35,26 +38,29 @@
     width: 100%;
 
   a {
-    width: 45%;
+    width: 12.5rem;
     height: auto;
     border: 1px solid $main-grey;
     padding: 0.5rem 0.75rem;
     text-align: center;
     font-size: 1.5rem;
+    font-family: $font-base;
     font-weight: 100;
     text-transform: uppercase;
     color: $main-grey;
     cursor: pointer;
     text-decoration: none;
+    
   
   }
   a:nth-oftype(2){
-    width: 45%;
+    width: 12.5rem;
     height: auto;
     border: 1px solid $main-grey;
     padding: 0.5rem 0.75rem;
     text-align: center;
     font-size: 1.25rem;
+    font-family: $font-base;
     font-weight: 100;
     
   }

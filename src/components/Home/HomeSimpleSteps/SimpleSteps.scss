@@ -1,0 +1,61 @@
+.siple__steps-container {
+  width: 100vw;
+  height: auto;
+
+  .simple__steps-top h1 {
+    width: auto;
+    text-align: center;
+    margin: 3rem 0 1.5rem 0;
+    font-family: $font-base;
+    font-size: 2rem;
+    font-weight: 300;
+    color: $main-grey-dark;
+  }
+  svg {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    g {
+      stroke: lighten($main-grey-dark, 10%);
+    }
+  }
+  .simplesteps__links-container {
+    width: 100vw;
+    height: auto;
+    background-color: lighten($main-grey, 30%);
+    padding: 2.5rem 0;
+    display: flex;
+    justify-content: center;
+
+    .simplesteps__links {
+      width: 60%;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      color: $main-grey-dark;
+    }
+  }
+  .simple__steps-button-container {
+    width: 100%;
+    height: auto;
+    margin: 2.5rem 0;
+    display: flex;
+    justify-content: center;
+    .simple__steps-button {
+      display: flex;
+      flex-direction: column;
+    width: 12.5rem;
+    height: auto;
+    border: 1px solid $main-grey;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: $font-base;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: $main-grey;
+    cursor: pointer;
+    text-decoration: none;
+    }
+  }
+}
