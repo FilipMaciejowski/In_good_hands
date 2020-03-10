@@ -44,8 +44,9 @@
     font-weight: 100;
     text-transform: uppercase;
     color: $main-grey;
-    
-    
+    cursor: pointer;
+    text-decoration: none;
+  
   }
   a:nth-oftype(2){
     width: 45%;

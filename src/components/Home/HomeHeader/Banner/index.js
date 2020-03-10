@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 
 const Banner = () =>{
   return (
@@ -56,12 +56,12 @@ const Banner = () =>{
           </g>
         </svg>
         <div className="header__buttons">
-          <Link>
+          <Link to="/login">
             Donate
             <br />
             items
           </Link>
-          <Link>
+          <Link to="/login">
             Organize
             <br />
             donation
