@@ -1,9 +1,12 @@
 .step__element{
+  height: auto;
   display: flex;
   flex-direction:column;
   justify-content: space-between;
   align-items: center;
-  width: 20%;
+  flex: 1 1 12rem;
+  margin: .5rem;
+
   img{
   width: 3rem;
   height: 3rem;

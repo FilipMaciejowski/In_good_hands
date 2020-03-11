@@ -28,11 +28,12 @@
     justify-content: center;
 
     .simplesteps__links {
-      width: 60%;
+      width: 70vw;
       height: auto;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       color: $main-grey-dark;
+      flex-wrap: wrap;
     }
   }
   .simple__steps-button-container {

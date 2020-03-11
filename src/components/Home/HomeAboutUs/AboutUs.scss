@@ -1,0 +1,66 @@
+.about__us-container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  .about__us-left-side {
+    flex: 1 1 50vw;
+    height: auto;
+    text-align: center;
+    background-color: lighten($main-grey, 30%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem 0; 
+
+    .about__us-left-side-banner {
+      width: 75%;
+      flex-direction: column;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      svg {
+        margin: 1rem 0;
+        g {
+          stroke: lighten($main-grey-dark, 10%);
+        }
+      }
+      h1 {
+        font-size: 1.75rem;
+        font-family: $font-base;
+        font-weight: 200;
+        margin: 0.5rem 0;
+        color: $main-grey-dark;
+      }
+      p {
+        @extend h1;
+        font-size: 1.5rem;
+      }
+    }
+    .signature__container {
+      width: 75%;
+      height: 25%;
+      display: flex;
+      justify-content: flex-end;
+      
+      
+
+      svg.signature {
+        width: 20%;
+        height: auto;
+        
+      }
+    }
+  }
+  .about__us-right-side {
+    flex: 1 1 50vw;
+    height: auto;
+    
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
