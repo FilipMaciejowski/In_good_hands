@@ -67,18 +67,20 @@ const LogIn = () => {
       </svg>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="login__input-container">
-          <input type="text" name="email" placeholder="email" ref={register} />
+          <label>Email</label>
+          <input type="text" name="Email" placeholder="" ref={register} />
+          <label>Password</label>
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder=""
             ref={register}
           />
         </div>
         <div className="form__buttons">
           <button type="submit">Login</button>
           {error ? <p>{error}</p> : null}
-          <NavLink to="/register">Sign up</NavLink>
+          <NavLink to="/signup">Sign up</NavLink>
         </div>
       </form>
     </div>

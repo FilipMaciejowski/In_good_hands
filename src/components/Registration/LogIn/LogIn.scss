@@ -1,6 +1,6 @@
-.login__container{
+.login__container {
   height: auto;
-  width: 25rem;
+  width: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,51 +9,96 @@
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  border: 1px solid red;
-  h1.login__header{
+
+  h1.login__header {
     margin-bottom: 1.25rem;
     font-family: $font-base;
     color: $main-grey-dark;
   }
-  svg.login__decoration{
+  svg.login__decoration {
     margin-bottom: 1.25rem;
     width: 50%;
-    g{
+    g {
       stroke: $main-grey-dark;
     }
   }
-  form{
+  form {
     width: 75%;
-    .login__input-container{
+
+    .login__input-container {
+      width: 100%;
       display: flex;
       flex-direction: column;
-      background-color: lighten($main-grey, 30%);
+      background-color: lighten($main-grey, 40%);
       padding: 2rem 4rem;
-      height: 10rem;
+      height: 12.5rem;
+      width: 100%;
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
-      input{
-      
-        border:none;
-        input::placeholder{
-        border: none;
-  }
+
+      label {
+        font-family: $font-base;
+        font-size: 0.85rem;
+        font-weight: 900;
       }
-  
-}
-}
-  .form__buttons{
-    width: 100%;
-    display: flex; 
-    justify-content: space-between;
-    button{
-      margin-top: 3rem;
-      transform: translate(-50%, 50%);
+      input {
+        background-color: lighten($main-grey, 40%);
+        border: none;
+        border-bottom: 2px solid $main-grey;
+        outline: none;
+        font-family: $font-base;
+      }
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus {
+        border: none;
+        -webkit-text-fill-color: $main-grey;
+        -webkit-box-shadow: 0 0 0px 1000px lighten($main-grey, 40%) inset;
+        transition: background-color 5000s ease-in-out 0s;
+        &:active {
+          border: none;
+        }
+
+        &::placeholder {
+          padding: 0.5rem;
+          background-color: lighten($main-grey, 40%);
+        }
+
+        &:placeholder-shown {
+          border: none;
+          background-color: lighten($main-grey, 30%);
+        }
+        &:placeholder-shown:active {
+          border: none;
+        }
+      }
     }
-    a{
-      margin-top: 3rem;
-      transform: translate(50%, 50%);
+
+    .form__buttons {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      button {
+        margin-top: 2rem;
+        transform: translate(-50%, 50%);
+        border: none; 
+        color: $main-grey-dark;
+        border: 1px solid $main-grey;
+        padding: .5rem 1rem;
+        cursor: pointer;
+        &:active{
+          outline: none;
+        } 
+      }
+      a {
+        margin-top: 2rem;
+        transform: translate(50%, 50%);
+        text-decoration: none;
+        color: $main-grey-dark;
+        padding: .5rem;
+       
+        padding: .5rem 1rem;
+      }
     }
   }
 }
