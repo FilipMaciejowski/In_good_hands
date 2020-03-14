@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux';
 
-const Banner = () =>{
+
+const Banner = () => {
+  const userData = useSelector(state => state.userData);
+  const [userState, setUserState] = useState(false);
+  useEffect(() => {
+    setUserState(userData.logged);
+  }, [userData]);
   return (
     <div className="home__header-banner">
       <div className="home__header-banner-content">
@@ -56,11 +63,19 @@ const Banner = () =>{
           </g>
         </svg>
         <div className="header__buttons">
-          <Link to="/login">
-            Donate
-            <br />
-            items
-          </Link>
+          {userState ? (
+            <Link to="/give-things-back">
+              Donate
+              <br />
+              items
+            </Link>
+          ) : (
+            <Link to="/login">
+              Donate
+              <br />
+              items
+            </Link>
+          )}
           <Link to="/login">
             Organize
             <br />
