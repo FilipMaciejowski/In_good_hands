@@ -14,8 +14,8 @@ const Register = () => {
 
   const logOut = () => {
     logOutUser().then(() => {
-      history.push("./logged-out");
-    });
+      history.push('./logged-out')
+    })
   };
 
   return (
@@ -33,11 +33,16 @@ const Register = () => {
           <NavLink to="/signup" activeClassName="active">
             Sign up
           </NavLink>
-          <Link to="/">home</Link>
+          <Link to="/" >
+            home
+          </Link>
         </div>
       )}
     </div>
   );
 };
+
+
+
 
 export default Register;

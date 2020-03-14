@@ -1,4 +1,5 @@
 import React from "react";
+import { Element } from "react-scroll";
 
 import HomeHeader from "./HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns";
@@ -7,7 +8,6 @@ import HomeAboutUs from "./HomeAboutUs";
 import HomeWeHelp from "./HomeWeHelp";
 import HomeContact from "./HomeContact";
 import HomeFooter from "./HomeFooter";
-import { Element } from "react-scroll";
 
 
 const Home = () => {

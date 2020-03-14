@@ -86,7 +86,7 @@ const HomeContact = () => {
     <div style={{height: "1000px", border: 'yellow'}}>
       {sending
         ?
-        <div>Loading !!</div>
+        <div>Loading!!</div>
         :
         <div>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -102,9 +102,9 @@ const HomeContact = () => {
           {successMessage ? <div>The message has been sent correctly</div> : null}
         </div>
       }
-
     </div>
   )
 };
 
 export default HomeContact;
+

@@ -4,7 +4,7 @@ import { registerUser } from "../../../firebase/firebase-actions/authentication"
 import { useHistory } from "react-router";
 
 const SignUp = () => {
-  const {register, handleSubmit, watch, formState} = useForm({ mode: "onChange"});
+  const { register, handleSubmit, watch, formState} = useForm({ mode: "onChange"});
   const [error, setError] = useState('');
   const history = useHistory();
   const onSubmit = data => {
@@ -15,8 +15,8 @@ const SignUp = () => {
     })
   };
   return (
-    <>
-      Sign in
+    <div className="signup__container">
+      <h1>Sign up</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
@@ -42,24 +42,23 @@ const SignUp = () => {
         <input
           type="password"
           name="confirmPassword"
-         ref={register({
-          validate: (value) => value === watch('password')
-        })} placeholder="confirm password" required
+          ref={register({
+            validate: value => value === watch("password")
+          })}
+          placeholder="confirm password"
+          required
         />
         <button type="submit">sign in</button>
-        {error ?
-          <p>{error}</p>
-          :
-          null
-        }
-        { formState.isSubmitted && formState.password && formState.confirmPassword && !formState.isValid ?
-          <p>Password and conformation of the password are not the same</p>
-          :
-          null
-        }
+        {error ? <p>{error}</p> : null}
+        {formState.isSubmitted &&
+        formState.password &&
+        formState.confirmPassword &&
+        !formState.isValid ? (
+          <p>Hasło i potwierdzenie hasła nie są takie same</p>
+        ) : null}
       </form>
-    </>
-  )
+    </div>
+  );
 };
 
 export default SignUp;
