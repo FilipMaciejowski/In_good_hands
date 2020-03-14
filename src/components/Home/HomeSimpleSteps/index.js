@@ -61,8 +61,8 @@ const HomeSimpleSteps = () =>{
           <Step
             topic={"Choose items"}
             description={"clothes, toys, tools, etc."}
-          >
-            <img
+          > 
+           <img
               className="step__icon"
               src={require("../../../assets/images/Icon.png")}
               alt="t-shirt-icon"
