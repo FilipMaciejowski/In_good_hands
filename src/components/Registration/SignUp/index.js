@@ -15,8 +15,8 @@ const SignUp = () => {
     })
   };
   return (
-    <>
-      Sign in my friend
+    <div className="signup__container">
+      <h1>Sign up</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
@@ -42,24 +42,23 @@ const SignUp = () => {
         <input
           type="password"
           name="confirmPassword"
-         ref={register({
-          validate: (value) => value === watch('password')
-        })} placeholder="confirm password" required
+          ref={register({
+            validate: value => value === watch("password")
+          })}
+          placeholder="confirm password"
+          required
         />
         <button type="submit">sign in</button>
-        {error ?
-          <p>{error}</p>
-          :
-          null
-        }
-        { formState.isSubmitted && formState.password && formState.confirmPassword && !formState.isValid ?
+        {error ? <p>{error}</p> : null}
+        {formState.isSubmitted &&
+        formState.password &&
+        formState.confirmPassword &&
+        !formState.isValid ? (
           <p>Hasło i potwierdzenie hasła nie są takie same</p>
-          :
-          null
-        }
+        ) : null}
       </form>
-    </>
-  )
+    </div>
+  );
 };
 
 export default SignUp;

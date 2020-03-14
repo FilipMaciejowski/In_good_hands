@@ -16,7 +16,7 @@ import { store } from "../redux";
 import { Provider } from "react-redux";
 import { checkIsUserLogged } from "../firebase/firebase-actions/authentication";
 import LoggedOut from "../components/LoggedOut";
-import GiveThingsBack from "../components/GiveBackThings";
+import DonateThings from "../components/DonateThings";
 
 const App = () => {
   firebase.initializeApp(firebaseConfig);
@@ -27,12 +27,13 @@ const App = () => {
     <Provider store={store}>
       <div className="App">
         <Router>
-          <Switch className="">
+          <NavBar />
+          <Switch className>
             <Route exact path="/" component={Home} />
             <Route path="/signup" component={SignUp} />
             <Route path="/login" component={LogIn} />
             <Route path="/logged-out" component={LoggedOut} />
-            <Route path="/give-things-back" component={GiveThingsBack} />
+            <Route path="/give-things-back" component={DonateThings} />
             <Redirect path="*" to="/" />
           </Switch>
         </Router>
