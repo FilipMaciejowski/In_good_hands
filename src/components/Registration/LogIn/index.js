@@ -68,7 +68,7 @@ const LogIn = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="login__input-container">
           <label>Email</label>
-          <input type="text" name="Email" placeholder="" ref={register} />
+          <input type="text" name="email" placeholder="" ref={register} />
           <label>Password</label>
           <input
             type="password"
