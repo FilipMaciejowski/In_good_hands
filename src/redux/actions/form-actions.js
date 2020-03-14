@@ -46,6 +46,7 @@ export const fetchOrganizations = () => dispatch => {
             organization: data.formData.organization
           });
         });
+
         dispatch({ type: FETCH_ORGANIZATIONS_FETCHED, payload: organizations });
         resolve();
       })

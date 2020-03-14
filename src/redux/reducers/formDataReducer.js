@@ -5,7 +5,7 @@ import {
   FETCH_ORGANIZATIONS_FETCHED,
   FETCH_ORGANIZATIONS_PENDING,
   FETCH_ORGANIZATIONS_REJECTED,
-  ADD_ORGANIZATION
+  
 } from "../types";
 
 const initialState = {
