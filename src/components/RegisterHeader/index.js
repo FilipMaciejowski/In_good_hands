@@ -15,7 +15,7 @@ const RegisterHeader = () => {
         ?
         <div>
           <p>Hi {userData.user.userName}</p>
-          <button onClick={() => logOut()}>Log out</button>
+          <button onClick={() => logOutUser()}>Log out</button>
         </div>
         :
         <div>

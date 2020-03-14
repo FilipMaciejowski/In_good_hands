@@ -17,7 +17,7 @@ const LogIn = () => {
   };
 
   return (
-    <>
+    <div className="login__container">
       Hello login
       <form onSubmit={handleSubmit(onSubmit)}>
         <input type="text" name="email" placeholder="email" ref={register} />
@@ -31,7 +31,7 @@ const LogIn = () => {
         {error ? <p>{error}</p> : null}
       </form>
       <NavLink to="/register">Sign up</NavLink>
-    </>
+    </div>
   );
 };
 
