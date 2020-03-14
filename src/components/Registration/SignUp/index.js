@@ -4,7 +4,7 @@ import { registerUser } from "../../../firebase/firebase-actions/authentication"
 import { useHistory } from "react-router";
 
 const SignUp = () => {
-  const { register, handleSubmit, watch, formState} = useForm({ mode: "onChange"});
+  const {register, handleSubmit, watch, formState} = useForm({ mode: "onChange"});
   const [error, setError] = useState('');
   const history = useHistory();
   const onSubmit = data => {
@@ -16,7 +16,7 @@ const SignUp = () => {
   };
   return (
     <>
-      Sign in my friend
+      Sign in
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
@@ -53,7 +53,7 @@ const SignUp = () => {
           null
         }
         { formState.isSubmitted && formState.password && formState.confirmPassword && !formState.isValid ?
-          <p>Hasło i potwierdzenie hasła nie są takie same</p>
+          <p>Password and conformation of the password are not the same</p>
           :
           null
         }

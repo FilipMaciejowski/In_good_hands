@@ -15,7 +15,7 @@ import { firebaseConfig } from "../firebase/firestore";
 import { store } from "../redux";
 import { Provider } from "react-redux";
 import { checkIsUserLogged } from "../firebase/firebase-actions/authentication";
-
+import LoggedOut from '../components/LoggedOut';
 
 
 const App = () => {
@@ -32,6 +32,7 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route path="/signup" component={SignUp} />
             <Route path="/login" component={LogIn} />
+            <Route path="/logged-out" component={LoggedOut} />
             <Redirect path="*" to="/" />
           </Switch>
         </Router>
