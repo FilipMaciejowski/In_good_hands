@@ -41,7 +41,9 @@ export const formDataReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         status: "FETCHED",
-        organizations: [...state.organizations, ...payload]
+        organizations: [
+          ...payload
+        ]
       };
     case FETCH_ORGANIZATIONS_REJECTED:
       return {

@@ -8,7 +8,7 @@ import {
 const initialState = {
   user: {},
   logged: false,
-  status: "FETCHED"
+  status: "PENDING"
 };
 
 export const userReducer = (

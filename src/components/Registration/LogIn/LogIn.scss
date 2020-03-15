@@ -49,39 +49,27 @@
         font-family: $font-base;
       }
       input:-webkit-autofill,
-      input:-webkit-autofill::placeholder,
       input:-webkit-autofill:hover,
       input:-webkit-autofill:focus {
-        font-size: 1rem;
         border: none;
-        height: 1.5rem;
         -webkit-text-fill-color: $main-grey;
-
-        
-        -webkit-box-shadow: 0 0 0px 1000px lighten($main-grey, 50%) inset;
+        -webkit-box-shadow: 0 0 0px 1000px lighten($main-grey, 40%) inset;
         transition: background-color 5000s ease-in-out 0s;
         &:active {
           border: none;
-          font-size: 1rem;
         }
 
         &::placeholder {
           padding: 0.5rem;
           background-color: lighten($main-grey, 40%);
-          height: 1.5rem;
-          font-size: 1rem;
         }
 
         &:placeholder-shown {
           border: none;
           background-color: lighten($main-grey, 30%);
-          height: 1.5rem;
-          font-size: 1rem;
         }
         &:placeholder-shown:active {
           border: none;
-          height: 1.5rem;
-          font-size: 1rem;
         }
       }
     }

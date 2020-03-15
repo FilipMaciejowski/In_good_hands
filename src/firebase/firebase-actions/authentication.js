@@ -63,6 +63,7 @@ export const logOutUser = () => {
 };
 
 export const checkIsUserLogged = user => {
+  store.dispatch({type: SET_USER_PENDING});
   const db = firebase.firestore();
   if (user) {
     const ref = db.collection('users').doc(user.email);

@@ -4,10 +4,18 @@ import {useSelector} from "react-redux";
 
 const Banner = () =>{
   const userData = useSelector(state => state.userData);
+  const userStatus = useSelector(state => state.userData.status);
+  const [userPending, setUserPending] = useState(true);
   const [userState, setUserState] = useState(false);
+
   useEffect(() => {
     setUserState(userData.logged);
   },[userData]);
+
+  useEffect(() => {
+    setUserPending(userStatus === "PENDING");
+    console.log(userStatus)
+  },[userStatus]);
   return (
     <div className="home__header-banner">
       <div className="home__header-banner-content">
@@ -62,25 +70,32 @@ const Banner = () =>{
           </g>
         </svg>
         <div className="header__buttons">
-          {userState
-            ?
-            <Link to="/give-things-back">
-              Donate
-              <br />
-              items
-            </Link>
+          {userPending ?
+            <div>Loading</div>
             :
-            <Link to="/login">
-              Donate
+            <>
+              {userState
+                ?
+                <Link to="/give-things-back">
+                  Donate
+                  <br />
+                  items
+                </Link>
+                :
+                <Link to="/login">
+                  Donate
+                  <br />
+                  items
+                </Link>
+              }
+              <Link to="/login">
+              Organize
               <br />
-              items
-            </Link>
+              donation
+              </Link>
+            </>
           }
-          <Link to="/login">
-            Organize
-            <br />
-            donation
-          </Link>
+
         </div>
       </div>
     </div>

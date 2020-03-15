@@ -13,7 +13,7 @@ const LogIn = () => {
     logInUser(data).then(() => {
       history.push('/')
     }).catch((message) => {
-      setError(message)
+      setError(message.message)
     })
   };
 
