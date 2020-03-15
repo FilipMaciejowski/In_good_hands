@@ -2,7 +2,7 @@ import firebase from "firebase";
 import { store } from "../../redux";
 import {
   REMOVE_USER_DATA,
-  SET_USER_FETCHED,
+  SET_USER_FETCHED, SET_USER_NOT_LOGGED,
   SET_USER_PENDING,
   SET_USER_REJECTED
 } from "../../redux/types";
@@ -73,5 +73,7 @@ export const checkIsUserLogged = user => {
       logOutUser();
       store.dispatch({type: SET_USER_REJECTED});
     });
+  } else {
+    store.dispatch({type: SET_USER_NOT_LOGGED});
   }
 };

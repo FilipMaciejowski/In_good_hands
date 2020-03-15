@@ -2,6 +2,7 @@ import {
   SET_USER_FETCHED,
   SET_USER_PENDING,
   SET_USER_REJECTED,
+  SET_USER_NOT_LOGGED,
   REMOVE_USER_DATA,
 } from "../types";
 
@@ -31,6 +32,13 @@ export const userReducer = (
       return {
         ...state,
         status: 'REJECTED'
+      };
+    case SET_USER_NOT_LOGGED:
+      return {
+        ...state,
+        logged: false,
+        status: 'FETCHED',
+        user: {}
       };
     case REMOVE_USER_DATA:
       return {

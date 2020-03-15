@@ -19,6 +19,7 @@ import LoggedOut from "../components/LoggedOut";
 import GiveThingsBack from "../components/GiveBackThings";
 
 const App = () => {
+
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
   firebase.auth().onAuthStateChanged(user => checkIsUserLogged(user));

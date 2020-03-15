@@ -5,7 +5,8 @@ import {
   ADD_FORM_DATA_DEPLOYED,
   FETCH_ORGANIZATIONS_PENDING,
   FETCH_ORGANIZATIONS_FETCHED,
-  FETCH_ORGANIZATIONS_REJECTED
+  FETCH_ORGANIZATIONS_REJECTED,
+  SET_USER_NOT_LOGGED
 } from "../../redux/types";
 
 export const addDonateItemsData = dataDonateItems => dispatch => {
@@ -43,7 +44,8 @@ export const fetchOrganizations = () => dispatch => {
           const data = doc.data();
           organizations.push({
             typeOfOrganization: data.formData.typeOfOrganization,
-            organization: data.formData.organization
+            organization: data.formData.organization,
+            bagsDonated: data.formData.bag,
           });
         });
 

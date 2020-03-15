@@ -63,7 +63,6 @@ const HomeContact = () => {
   };
 
   const sendData = data => {
-    console.log(JSON.stringify(data))
     setSending(true);
     axios.post(
       requestUrl,

@@ -9,7 +9,7 @@ import {
 } from "../types";
 
 const initialState = {
-  status: "FETCHED",
+  status: "PENDING",
   error: {},
   organizations: []
 };
