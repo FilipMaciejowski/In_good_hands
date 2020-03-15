@@ -22,7 +22,7 @@ const Register = () => {
     <div className="registration__menu">
       {userState ? (
         <div className="registration__menu-logout">
-          <p>Hi {userData.user.userName}</p>
+          <p>Hi {userData.user.userName}!</p>
           <button onClick={() => logOut()}>Log out</button>
         </div>
       ) : (

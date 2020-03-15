@@ -65,7 +65,14 @@ const SignUp = () => {
       </svg>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="signup__input-container">
-          
+          <label>Name</label>
+          <input
+            type="text"
+            name="userName"
+            placeholder=""
+            ref={register}
+            required
+          />
           <label>Email</label>
           <input
             type="email"

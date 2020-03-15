@@ -2,6 +2,25 @@
 .registration__menu{
   display: flex;
   justify-content: flex-end;
+
+.registration__menu-logout{
+  display: flex;
+  width: 20%;;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .25rem;
+button{
+    text-decoration: none;
+    font-family: $font-base;
+    font-size: .75rem;
+    color: $main-grey;
+    padding: .5rem .75rem;
+    border: 1px solid #fff;
+    outline: none;
+    cursor: pointer;
+  }
+}
 .registration__menu-main{
   width: 50%;;
   display: flex;
