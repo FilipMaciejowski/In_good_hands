@@ -47,7 +47,6 @@
         border-bottom: 2px solid $main-grey;
         outline: none;
         font-family: $font-base;
-        height: 2rem;
       }
       input:-webkit-autofill,
       input:-webkit-autofill:hover,
@@ -56,9 +55,8 @@
         -webkit-text-fill-color: $main-grey;
         -webkit-box-shadow: 0 0 0px 1000px lighten($main-grey, 40%) inset;
         transition: background-color 5000s ease-in-out 0s;
-        &:focus {
+        &:active {
           border: none;
-          padding: 1rem;
         }
 
         &::placeholder {
@@ -69,11 +67,9 @@
         &:placeholder-shown {
           border: none;
           background-color: lighten($main-grey, 30%);
-          padding: 1rem;
         }
         &:placeholder-shown:active {
           border: none;
-          padding: 1rem;
         }
       }
     }
@@ -90,7 +86,7 @@
         border: 1px solid $main-grey;
         padding: .5rem 1rem;
         cursor: pointer;
-        &:focus{
+        &:active{
           outline: none;
         } 
       }
@@ -99,6 +95,8 @@
         transform: translate(50%, 50%);
         text-decoration: none;
         color: $main-grey-dark;
+        padding: .5rem;
+       
         padding: .5rem 1rem;
       }
     }

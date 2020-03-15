@@ -9,16 +9,99 @@
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-   h1.login__header {
+
+  h1.signup__header {
     margin-bottom: 1.25rem;
     font-family: $font-base;
     color: $main-grey-dark;
   }
-  svg.login__decoration {
+  svg.signup__decoration {
     margin-bottom: 1.25rem;
     width: 50%;
     g {
       stroke: $main-grey-dark;
+    }
+  }
+  form {
+    width: 75%;
+
+    .signup__input-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: lighten($main-grey, 40%);
+      padding: 2rem 4rem;
+      height: 18.75rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      label {
+        font-family: $font-base;
+        font-size: 0.85rem;
+        font-weight: 900;
+      }
+      input {
+        background-color: lighten($main-grey, 40%);
+        border: none;
+        border-bottom: 2px solid $main-grey;
+        outline: none;
+        font-family: $font-base;
+        height: 2rem;
+      }
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus {
+        border: none;
+        -webkit-text-fill-color: $main-grey;
+        -webkit-box-shadow: 0 0 0px 1000px lighten($main-grey, 40%) inset;
+        transition: background-color 5000s ease-in-out 0s;
+        &:focus {
+          border: none;
+          padding: 1rem;
+        }
+
+        &::placeholder {
+          padding: 1rem;
+          background-color: lighten($main-grey, 40%);
+        }
+
+        &:placeholder-shown {
+          border: none;
+          background-color: lighten($main-grey, 30%);
+          padding: 1rem;
+        }
+        &:placeholder-shown:active {
+          border: none;
+          padding: 1rem;
+        }
+      }
+    }
+
+    .form__buttons {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        margin-top: 2rem;
+        transform: translate(50%, 50%);
+        border: none; 
+        color: $main-grey-dark;
+        border: 1px solid $main-grey;
+        padding: .5rem 1rem;
+        cursor: pointer;
+        &:focus{
+          outline: none;
+        } 
+      }
+      a {
+        margin-top: 2rem;
+        transform: translate(-50%, 50%);
+        text-decoration: none;
+        color: $main-grey-dark;
+        padding: .5rem 1rem;
+      }
     }
   }
 }

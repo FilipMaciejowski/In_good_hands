@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {NavLink} from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { registerUser } from "../../../firebase/firebase-actions/authentication";
 import { useHistory } from "react-router";
@@ -18,7 +19,7 @@ const SignUp = () => {
     <div className="signup__container">
       <h1 className="signup__header">Sign up</h1>
       <svg
-        className="login__decoration"
+        className="signup__decoration"
         xmlns="http://www.w3.org/2000/svg"
         width="253"
         height="33"
@@ -63,44 +64,46 @@ const SignUp = () => {
         </g>
       </svg>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          type="text"
-          name="userName"
-          placeholder="your name"
-          ref={register}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="email"
-          ref={register}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          ref={register}
-          required
-        />
-        <input
-          type="password"
-          name="confirmPassword"
-          ref={register({
-            validate: value => value === watch("password")
-          })}
-          placeholder="confirm password"
-          required
-        />
-        <button type="submit">sign in</button>
-        {error ? <p>{error}</p> : null}
-        {formState.isSubmitted &&
-        formState.password &&
-        formState.confirmPassword &&
-        !formState.isValid ? (
-          <p>Hasło i potwierdzenie hasła nie są takie same</p>
-        ) : null}
+        <div className="signup__input-container">
+          
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder=""
+            ref={register}
+            required
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder=""
+            ref={register}
+            required
+          />
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            ref={register({
+              validate: value => value === watch("password")
+            })}
+            placeholder=""
+            required
+          />
+        </div>
+        <div className="form__buttons">
+          <NavLink to="/login">Log in</NavLink>
+          <button type="submit">sign up</button>
+          {error ? <p>{error}</p> : null}
+          {formState.isSubmitted &&
+          formState.password &&
+          formState.confirmPassword &&
+          !formState.isValid ? (
+            <p>Hasło i potwierdzenie hasła nie są takie same</p>
+          ) : null}
+        </div>
       </form>
     </div>
   );
