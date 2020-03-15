@@ -86,9 +86,10 @@
         border: 1px solid $main-grey;
         padding: .5rem 1rem;
         cursor: pointer;
-        &:active{
-          outline: none;
-        } 
+        &:focus{
+          outline: none; 
+        }
+        
       }
       a {
         margin-top: 2rem;
@@ -96,7 +97,7 @@
         text-decoration: none;
         color: $main-grey-dark;
         padding: .5rem;
-       
+        outline: none;
         padding: .5rem 1rem;
       }
     }
