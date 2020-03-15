@@ -2,15 +2,12 @@
   width: 100vw;
   display: flex;
   justify-content: center;
+
   .organization-header-till {
     cursor: pointer;
     margin: 20px 50px;
     padding: 20px 30px;
-    border: 1px solid gray;
-
-  }
-  .header-till-active {
-    background: lightyellow;
+    border: 1px solid $main-grey;
   }
 
 }
@@ -24,7 +21,5 @@
     padding: 5px;
     margin: 0 10px;
   }
-  .organization-footer-number-active {
-    background: lightyellow;
-  }
+
 }

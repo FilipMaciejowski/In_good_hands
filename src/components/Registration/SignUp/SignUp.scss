@@ -1,0 +1,24 @@
+.signup__container {
+  height: auto;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+   h1.login__header {
+    margin-bottom: 1.25rem;
+    font-family: $font-base;
+    color: $main-grey-dark;
+  }
+  svg.login__decoration {
+    margin-bottom: 1.25rem;
+    width: 50%;
+    g {
+      stroke: $main-grey-dark;
+    }
+  }
+}

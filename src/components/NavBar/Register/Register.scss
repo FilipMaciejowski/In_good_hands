@@ -9,17 +9,15 @@
   margin-bottom: .25rem;
 
   a{
-    font-size: 0.75rem;
+    font-size: .75rem;
     text-decoration: none;
     font-family: $font-base;
     color: $main-grey;
-    padding: 0.5rem;
+    padding: .5rem .75rem;
+    border: 1px solid #fff;
   }
-
 }
 }
 
-.active {
-      border: 1px solid $main-yellow;
-}
+
 

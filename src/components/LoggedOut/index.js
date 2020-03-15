@@ -10,7 +10,7 @@ const LoggedOut = () => {
 
   return (
     <div>
-      Wylogowano !
+      You are logged out!
       <button onClick={() => backToHome()}>Back to home</button>
     </div>
   )

@@ -27,10 +27,10 @@ const Register = () => {
         </div>
       ) : (
         <div className="registration__menu-main">
-          <NavLink to="/login" activeClassName="active">
+          <NavLink to="/login">
             Log in
           </NavLink>
-          <NavLink to="/signup" activeClassName="active">
+          <NavLink to="/signup">
             Sign up
           </NavLink>
           <Link to="/" >

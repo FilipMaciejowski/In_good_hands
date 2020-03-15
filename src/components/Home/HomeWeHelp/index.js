@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import organizationsTypes from "../../../constans/organizationsTypes";
-import './style.scss'
 import { fetchOrganizations } from "../../../redux/actions/form-actions";
 
 const HomeWeHelp = () => {

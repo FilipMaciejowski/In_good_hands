@@ -30,7 +30,7 @@ const people = {
   oldPeople: 'osobom starszym'
 };
 
-const GiveThingsBack = () => {
+const DonateThings = () => {
   const [formData, setFormData] = useState({});
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -286,25 +286,25 @@ const GiveThingsBack = () => {
               <div>
                 <input type="text" id="street" name="street" ref={register} defaultValue={formData.fourthStep ? formData.fourthStep.street : ''}/>
                 <label htmlFor="street">
-                  Ulica
+                  Street
                 </label><br/>
               </div>
               <div>
                 <input type="text" id="city" name="city" ref={register} defaultValue={formData.fourthStep ? formData.fourthStep.city : ''}/>
                 <label htmlFor="city">
-                  Miasto
+                  City
                 </label><br/>
               </div>
               <div>
                 <input type="text" id="zipCode" name="zipCode" ref={register} defaultValue={formData.fourthStep ? formData.fourthStep.zipCode : ''}/>
                 <label htmlFor="zipCode">
-                  Kod pocztowy
+                  Zip Code
                 </label><br/>
               </div>
               <div>
                 <input type="text" id="phone" name="phone" ref={register} defaultValue={formData.fourthStep ? formData.fourthStep.phone : ''}/>
                 <label htmlFor="phone">
-                  Numer telefonu
+                  Telephone number
                 </label><br/>
               </div>
             </div>
@@ -318,13 +318,13 @@ const GiveThingsBack = () => {
               <div>
                 <input type="text" id="hours" name="hours" ref={register} defaultValue={formData.fourthStep ? formData.fourthStep.hours : ''}/>
                 <label htmlFor="hours">
-                  Godzina
+                  Hour
                 </label><br/>
               </div>
               <div>
                 <textarea id="note" name="note" ref={register} defaultValue={formData.fourthStep ? formData.fourthStep.note : ''}/>
                 <label htmlFor="note">
-                  Uwagi do kuriera
+                  Comments for delivery man
                 </label><br/>
               </div>
             </div>
@@ -459,4 +459,4 @@ const GiveThingsBack = () => {
   )
 };
 
-export default GiveThingsBack;
+export default DonateThings;
