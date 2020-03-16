@@ -1,3 +1,71 @@
-.contact__container{
-  border: 1px solid blue;
+.contact__container {
+  position: relative;
+  width: 96vw;
+  height: 125vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  &::before{
+  content: '';
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    url("../../../assets/images/Background-Contact-Form.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  opacity: .4;
+  
+  }
+
+  .contact__form-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 90%;
+    position: relative;
+    
+
+    .contact__form-content{
+      height: 75%;
+      border: 1px solid green;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      h1.contact__header{
+        color: $main-grey-dark;
+        font-family: $font-base;
+        font-size: 1.75rem;
+      }
+      svg.contact__decoration {
+    margin-bottom: 1.25rem;
+    width: 50%;
+    g {
+      stroke: $main-grey-dark;
+    }
+  }
+
+  form{
+    width: 75%;
+    height: 75%;
+  .contact__form-container{
+    width: 100%;
+    height: 75%;
+    border: 1px solid green;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    input{
+      width: 50%;
+    }
+  }
+}
+    }
+  }
 }

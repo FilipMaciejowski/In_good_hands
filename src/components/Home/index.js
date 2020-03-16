@@ -29,7 +29,6 @@ const Home = () => {
       <Element name="contact">
         <HomeContact />
       </Element>
-      <HomeFooter />
     </div>
   );
 };
