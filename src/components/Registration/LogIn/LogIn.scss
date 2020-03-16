@@ -47,6 +47,7 @@
         border-bottom: 2px solid $main-grey;
         outline: none;
         font-family: $font-base;
+       height: 1.5rem;
       }
       input:-webkit-autofill,
       input:-webkit-autofill:hover,
@@ -55,6 +56,7 @@
         -webkit-text-fill-color: $main-grey;
         -webkit-box-shadow: 0 0 0px 1000px lighten($main-grey, 40%) inset;
         transition: background-color 5000s ease-in-out 0s;
+       
         &:active {
           border: none;
         }

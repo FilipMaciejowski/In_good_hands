@@ -35,8 +35,12 @@ button{
     padding: .5rem .75rem;
     border: 1px solid #fff;
   }
+  a.active{
+    border: 1px solid $main-yellow;
+  }
+  }
 }
-}
+
 
 
 

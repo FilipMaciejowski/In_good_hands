@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import './style.scss'
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { addDonateItemsData } from '../../redux/actions/form-actions'
