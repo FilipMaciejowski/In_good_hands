@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import Loading from '../HomeWeHelp/Loading';
 
 const HomeContact = () => {
   const requestUrl = 'https://fer-api.coderslab.pl/v1/portfolio/contact';
@@ -82,10 +83,10 @@ const HomeContact = () => {
   };
 
   return (
-    <div style={{height: "1000px", border: 'yellow'}}>
+    <div className="contact__container">
       {sending
         ?
-        <div>Loading!!</div>
+        <div><Loading /></div>
         :
         <div>
           <form onSubmit={handleSubmit(onSubmit)}>

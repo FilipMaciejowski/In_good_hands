@@ -1,5 +1,5 @@
 export default {
-  first: 'Fundacja',
-  second: 'Organizacja',
-  third: 'Firma',
+  first: 'Fundation',
+  second: 'Organization',
+  third: 'Company',
 };

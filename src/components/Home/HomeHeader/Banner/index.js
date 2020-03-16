@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {useSelector} from "react-redux";
+import Loading from '../../HomeWeHelp/Loading';
 
 const Banner = () =>{
   const userData = useSelector(state => state.userData);
@@ -21,7 +22,7 @@ const Banner = () =>{
         <h1>
           Let's help!
           <br />
-          Give away unused items in good hands
+          Give away unused items in good hands.
         </h1>
         <svg
           className="decoration"
@@ -70,7 +71,7 @@ const Banner = () =>{
         </svg>
         <div className="header__buttons">
           {userPending ?
-            <div>Loading</div>
+            <div><Loading /></div>
             :
             <>
               {userState

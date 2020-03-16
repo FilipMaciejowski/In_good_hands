@@ -34,7 +34,7 @@ const Register = () => {
             Sign up
           </NavLink>
           <Link to="/" >
-            home
+            Home
           </Link>
         </div>
       )}

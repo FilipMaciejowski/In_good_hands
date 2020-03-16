@@ -216,8 +216,8 @@ const DonateThings = () => {
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
-          { errorSecondStep ? <div className="error-message">Wybierz ilość worków !!</div> : null}
-          <button type="submit">Dalej</button>
+          { errorSecondStep ? <div className="error-message">Please, choose amount of bags!!</div> : null}
+          <button type="submit">Next</button>
           <button onClick={() => stepDown()}>wstecz</button>
         </form>
       </div>
@@ -231,13 +231,13 @@ const DonateThings = () => {
             <label htmlFor="localization">Lokalizacja:</label>
             <select id="localization" name="localization" defaultValue={formData.thirdStep ? formData.thirdStep.localization : ''} ref={register}>
               <option value="" disabled>-- Wybierz --</option>
-              <option value="poznan">Poznań</option>
-              <option value="warszawa">Warszawa</option>
-              <option value="krakow">Kraków</option>
-              <option value="wroclaw">Wrocław</option>
-              <option value="katowice">Katowice</option>
+              <option value="poznan">Bergen</option>
+              <option value="warszawa">Kristiansand</option>
+              <option value="krakow">Oslo</option>
+              <option value="wroclaw">Stavanger</option>
+              <option value="katowice">Trondheim</option>
             </select>
-            { errorThirdStepLocalization ? <div className="error-message">Wybierz lokalizacje</div> : null}
+            { errorThirdStepLocalization ? <div className="error-message">Please, choose location</div> : null}
           </div>
           <div>
             <div className={`till ${tillsValue.children ? 'active' : ''}`} onClick={() => changeTillValue('children')}>

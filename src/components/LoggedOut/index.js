@@ -12,7 +12,7 @@ const LoggedOut = () => {
     <div className="loggeout__container">
       <h1 className="loggedout__header">You are successfully logged out!</h1>
       <svg
-        className="login__decoration"
+        className="loggedout__decoration"
         xmlns="http://www.w3.org/2000/svg"
         width="253"
         height="33"

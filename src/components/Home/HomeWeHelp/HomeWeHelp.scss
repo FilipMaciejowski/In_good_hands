@@ -1,25 +1,70 @@
-.tills-wrapper {
+.whodowehelp__container {
   width: 100vw;
-  display: flex;
-  justify-content: center;
-
-  .organization-header-till {
-    cursor: pointer;
-    margin: 20px 50px;
-    padding: 20px 30px;
-    border: 1px solid $main-grey;
+  height: 75vh;
+  margin: 2.5rem 0;
+  text-align: center;
+  h1 {
+    color: $main-grey-dark;
+    font-family: $font-base;
+  }
+  svg.whodowehelp__decoration {
+    margin-bottom: 1.25rem;
+    width: 50%;
+    g {
+      stroke: $main-grey-dark;
+    }
+  }
+  p.whodowehelp__description {
+    width: 35%;
+    height: auto;
+    margin: 2.5rem auto;
+    color: $main-grey-dark;
+    font-family: $font-base;
   }
 
-}
+  .tills-wrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
 
-.footer-wrapper {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  .organization-footer-number {
-    cursor: pointer;
-    padding: 5px;
-    margin: 0 10px;
+    .organization-header-till {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 8rem;
+      height: 2rem;
+      margin: 1.75rem 3.25rem;
+      padding: 1.75rem 3rem;
+      border: 1px solid #fff;
+    }
+    .header-till-active {
+      border: 1px solid $main-grey;
+    }
+
+    .content-wrapper {
+      height: 40%;
+      width: 100%;
+      margin-bottom: 3.35rem;
+      height: auto;
+        width: 100%;
+        border-bottom: 1px solid $main-grey;
+      
+    }
+   
+        
   }
 
+  .footer-wrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0;
+    .organization-footer-number {
+      cursor: pointer;
+      padding: 5px;
+      margin: 0 10px;
+    }
+  }
 }
