@@ -56,7 +56,7 @@ const LoggedOut = () => {
           />
         </g>
       </svg>
-      <button onClick={() => backToHome()}>Back to home</button>
+      <button onClick={() => backToHome()}>Main page</button>
     </div>
   );
 };
