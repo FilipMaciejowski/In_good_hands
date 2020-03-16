@@ -1,0 +1,36 @@
+.loggeout__container{
+  height: auto;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -75%);
+  h1.loggedout__header{
+    margin-bottom: 1.25rem;
+    font-family: $font-base;
+    color: $main-grey-dark;
+  }
+  svg.loggedout__decoration {
+    margin-bottom: 1.25rem;
+    width: 50%;
+    g {
+      stroke: $main-grey-dark;
+    }
+  }
+  button {
+        margin-top: 2rem;
+        border: none; 
+        color: $main-grey-dark;
+        border: 1px solid $main-grey;
+        padding: .5rem 1rem;
+        cursor: pointer;
+        &:focus{
+          outline: none; 
+        }
+        
+      }
+}
