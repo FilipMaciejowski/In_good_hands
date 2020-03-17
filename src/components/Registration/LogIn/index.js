@@ -112,10 +112,10 @@ const LogIn = () => {
             }}
             onBlur={() => validateEmail()}
           />
-          {emailError ? <div>Nie poprawny adress email</div> : null}
+          {emailError ? <div className="incorrect__email">incorrect email adress</div> : null}
           <label>Password</label>
           <input
-            className={`${passwordError ? "password_error" : ""}`}
+            className={`${(passwordError || error) ? "password_error" : ""}`}
             type="password"
             name="password"
             placeholder=""
@@ -126,11 +126,13 @@ const LogIn = () => {
             onBlur={() => validatePassword()}
           />
           {passwordError ? (
-            <div>hasło musi być dłuższe niż 6 znaków</div>
+            <div className="password__error">password should be longer than 6 characters</div>
           ) : null}
         </div>
         {loading ? (
-          <div><Loading /></div>
+          <div>
+            <Loading />
+          </div>
         ) : (
           <div className="form__buttons">
             <button
@@ -139,7 +141,7 @@ const LogIn = () => {
             >
               Login
             </button>
-            {error ? <p>{error}</p> : null}
+            {error ? <p style={{color: "red"}}>invalid password!</p> : null}
             <NavLink to="/signup">Sign up</NavLink>
           </div>
         )}

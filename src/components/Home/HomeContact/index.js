@@ -1,86 +1,91 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import axios from 'axios';
-import Loading from '../HomeWeHelp/Loading';
-import HomeFooter from '../HomeFooter';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import Loading from "../HomeWeHelp/Loading";
+import HomeFooter from "../HomeFooter";
 
 const HomeContact = () => {
-  const requestUrl = 'https://fer-api.coderslab.pl/v1/portfolio/contact';
+  const requestUrl = "https://fer-api.coderslab.pl/v1/portfolio/contact";
   const { register, handleSubmit } = useForm();
   const [sending, setSending] = useState(false);
   const [error, setErrorRequest] = useState(false);
   const [successMessage, setSuccessMessage] = useState(false);
   const [errorName, setErrorName] = useState(false);
+  const [emailError, setEmailError] = useState(false);
   const [errorNameNumber, setErrorNameNumber] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
+  const [nameValue, setNameValue] = useState("");
+  const [emailValue, setEmailValue] = useState("");
+  const [messageValue, setMessageValue] = useState("");
+  const isError = errorNameNumber || emailError || errorMessage;
+  const isEmpty = !(emailValue && messageValue && nameValue);
 
   const onSubmit = event => {
-    if (runValidation(event)) {
-      sendData(event);
+    if (isEmpty || isError) {
+      return;
     }
+    sendData(event);
   };
 
-  const runValidation = formData => {
-    let isValid = true;
-    if (checkIsOneExpression(formData.name)) {
-      setErrorName(true);
-      isValid = false;
-    }
-    if (checkIsContainNumber(formData.name)) {
-      setErrorNameNumber(true);
-      isValid = false
-    }
-    if (checkMessageLength(formData.message)) {
+  const messageValidation = () => {
+    if (checkMessageLength(messageValue)) {
       setErrorMessage(true);
-      isValid = false;
-    }
-    return isValid;
-  };
-
-  const checkIsStillFalseErrorName = e => {
-    if (!checkIsOneExpression(e.target.value)) {
-      setErrorName(false)
-    }
-    if (!checkIsContainNumber(e.target.value)) {
-      setErrorNameNumber(false)
+    } else {
+      setErrorMessage(false);
     }
   };
 
-  const checkIsStillFalseErrorMessage = e => {
-    if (!checkMessageLength(e.target.value)) {
-      setErrorMessage(false)
+  const nameValidation = () => {
+    if (checkIsOneExpression(nameValue)) {
+      setErrorName(true);
+    } else {
+      setErrorName(false);
+    }
+
+    if (checkIsContainNumber(nameValue)) {
+      setErrorNameNumber(true);
+    } else {
+      setErrorNameNumber(false);
     }
   };
 
   const checkIsOneExpression = stringData => {
-    return /\s/.test((stringData).trim());
+    return /\s/.test(stringData.trim());
   };
 
   const checkIsContainNumber = stringData => {
-    return /\d/.test((stringData));
+    return /\d/.test(stringData);
   };
 
   const checkMessageLength = message => {
     return message.length < 120;
   };
 
+  const validateEmail = () => {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailValue)) {
+      setEmailError(false);
+    } else {
+      setEmailError(true);
+    }
+  };
+
   const sendData = data => {
     setSending(true);
-    axios.post(
-      requestUrl,
-      JSON.stringify(data),
-      {headers: {
-        'Content-Type': 'application/json'
-      }})
+    axios
+      .post(requestUrl, JSON.stringify(data), {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
       .then(() => {
-        setSuccessMessage(true)
+        setSuccessMessage(true);
       })
       .catch(() => {
-        setErrorRequest(true)
+        setErrorRequest(true);
       })
       .finally(() => {
         setSending(false);
-      })
+      });
   };
 
   return (
@@ -149,12 +154,15 @@ const HomeContact = () => {
                   <div className="input__element-container">
                     <label>Enter your name</label>
                     <input
-                      onChange={e => checkIsStillFalseErrorName(e)}
+                      className={`${errorName ? "name_error" : ""}`}
                       type="text"
                       name="name"
                       placeholder=""
                       ref={register}
-                      required
+                      onChange={e => {
+                        setNameValue(e.target.value);
+                      }}
+                      onBlur={() => nameValidation()}
                     />
                     {errorName ? (
                       <div>name should be one expression</div>
@@ -166,21 +174,27 @@ const HomeContact = () => {
                   <div className="input__element-container">
                     <label>Enter your email</label>
                     <input
+                      className={`${emailError ? "email_error" : ""}`}
                       type="email"
                       name="email"
                       placeholder=""
                       ref={register}
-                      required
+                      onChange={e => {
+                        setEmailValue(e.target.value);
+                      }}
+                      onBlur={() => validateEmail()}
                     />
                   </div>
+                  {emailError ? <div>Wpisz poprawny adres email</div> : null}
                 </div>
                 <label>Enter your message</label>
                 <textarea
-                  onChange={e => checkIsStillFalseErrorMessage(e)}
                   placeholder=""
+                  className={`${errorMessage ? "message_error" : ""}`}
                   name="message"
                   ref={register}
-                  required
+                  onChange={e => setMessageValue(e.target.value)}
+                  onBlur={() => messageValidation()}
                 />
                 {errorMessage ? (
                   <div>
@@ -189,7 +203,12 @@ const HomeContact = () => {
                 ) : null}
               </div>
               <div className="button__form__container">
-                <button type="submit">Submit</button>
+                <button
+                  type="submit"
+                  style={{ cursor: (isError || isEmpty) && "not-allowed" }}
+                >
+                  Submit
+                </button>
               </div>
             </form>
             {error ? <div>something went wrong, try again later</div> : null}
@@ -205,4 +224,3 @@ const HomeContact = () => {
 };
 
 export default HomeContact;
-
