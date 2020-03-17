@@ -24,6 +24,7 @@
   }
   form {
     width: 75%;
+    
 
     .login__input-container {
       width: 100%;
@@ -77,13 +78,12 @@
     }
 
     .form__buttons {
-      width: 100%;
+      width: 20rem;
       display: flex;
       justify-content: space-between;
       button {
         margin-top: 2rem;
         transform: translate(-50%, 50%);
-        border: none; 
         color: $main-grey-dark;
         border: 1px solid $main-grey;
         padding: .5rem 1rem;

@@ -38,6 +38,9 @@ button{
     padding: .5rem .75rem;
     border: 1px solid #fff;
   }
+  a:nth-of-type(3){
+    padding: .5rem .5rem;
+  }
   a.active{
     border: 1px solid $main-yellow;
   }

@@ -1,8 +1,19 @@
 .footer__container{
-  position: relative;
+  width: 5rem;;
+  height: 3rem;
   
-p.footer__elements{
-  color: $main-grey-dark;
-}
+   cursor: pointer;
+  margin:  0  5vw 1rem  0 ;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border: 1px solid red; 
+
+  svg{
+    cursor: pointer;
+    path{
+      transform: translate(25%, 25%);
+    }
+  }
 }
 

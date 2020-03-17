@@ -85,12 +85,17 @@ const HomeContact = () => {
 
   return (
     <div className="contact__container">
+      <div className="contact__left-side">
+        <img
+          src={require("../../../assets/images/Background-Contact-Form.jpg")}
+        />
+      </div>
       {sending ? (
         <div>
           <Loading />
         </div>
       ) : (
-        <div className="contact__form-container">
+        <div className="contact__submit-container">
           <div className="contact__form-content">
             <h1 className="contact__header">Contact with us!</h1>
             <svg
@@ -140,29 +145,39 @@ const HomeContact = () => {
             </svg>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="contact__form-container">
-                
-                <input
-                  onChange={e => checkIsStillFalseErrorName(e)}
-                  type="text"
-                  name="name"
-                  placeholder="name"
-                  ref={register}
-                  required
-                />
-                {errorName ? <div>name should be one expression</div> : null}
-                {errorNameNumber ? (
-                  <div>name shouldn't contain number</div>
-                ) : null}
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  ref={register}
-                  required
-                />
+                <div className="top__input">
+                  <div className="input__element-container">
+                    <label>Enter your name</label>
+                    <input
+                      onChange={e => checkIsStillFalseErrorName(e)}
+                      type="text"
+                      name="name"
+                      placeholder=""
+                      ref={register}
+                      required
+                    />
+                    {errorName ? (
+                      <div>name should be one expression</div>
+                    ) : null}
+                    {errorNameNumber ? (
+                      <div>name shouldn't contain number</div>
+                    ) : null}
+                  </div>
+                  <div className="input__element-container">
+                    <label>Enter your email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder=""
+                      ref={register}
+                      required
+                    />
+                  </div>
+                </div>
+                <label>Enter your message</label>
                 <textarea
                   onChange={e => checkIsStillFalseErrorMessage(e)}
-                  placeholder="message"
+                  placeholder=""
                   name="message"
                   ref={register}
                   required
@@ -173,16 +188,18 @@ const HomeContact = () => {
                   </div>
                 ) : null}
               </div>
-              <button type="submit">Submit</button>
+              <div className="button__form__container">
+                <button type="submit">Submit</button>
+              </div>
             </form>
             {error ? <div>something went wrong, try again later</div> : null}
             {successMessage ? (
               <div>The message has been sent correctly</div>
             ) : null}
           </div>
+          <HomeFooter />
         </div>
       )}
-      <HomeFooter />
     </div>
   );
 };
