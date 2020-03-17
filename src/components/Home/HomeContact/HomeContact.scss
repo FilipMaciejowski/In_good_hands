@@ -3,9 +3,10 @@
   height: 120vh;
   display: flex;
   overflow: hidden;
+  flex-wrap: wrap;
 
   .contact__left-side {
-    width: 50%;
+    flex: 1 1 50vw;
     height: auto;
     position: relative;
 
@@ -52,7 +53,7 @@
         font-size: 1.75rem;
         margin-top: 1.5rem;
       }
-      
+
       svg.contact__decoration {
         margin-bottom: 1.25rem;
         width: 50%;
@@ -143,7 +144,7 @@
               text-align: right;
        background-color: #00000000;
         color: $main-grey-dark;
-        border: 1px solid $main-grey;
+        border: 1px solid $main-grey-dark;
         padding: .5rem 1.5rem;
         cursor: pointer;
         &:focus{

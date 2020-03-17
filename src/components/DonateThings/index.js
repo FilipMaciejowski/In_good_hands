@@ -389,6 +389,7 @@ const DonateThings = () => {
   };
 
   const summary = () => {
+
     const addressData = formData.fourthStep;
     return(
       <div>
@@ -448,13 +449,14 @@ const DonateThings = () => {
             </div>
             :
             <div>
-              {step < 5 ? <p>krok {step}/4</p> : null}
+              {step < 5 ? <p>krok{step}/4</p> : null}
               {returnCurrentStep()}
             </div>
         }
         </div>
       }
     </div>
+    
   )
 };
 

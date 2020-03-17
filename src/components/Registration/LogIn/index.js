@@ -1,20 +1,53 @@
-import React, {useState} from 'react';
-import { NavLink } from 'react-router-dom'
-import { useForm } from 'react-hook-form';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { logInUser } from "../../../firebase/firebase-actions/authentication";
 import { useHistory } from "react-router";
+import Loading from '../../Home/HomeWeHelp/Loading';
 
 const LogIn = () => {
   const { register, handleSubmit } = useForm();
-  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [emailValue, setEmailValue] = useState("");
+  const [passwordValue, setPasswordValue] = useState("");
   const history = useHistory();
-  
-  const onSubmit = (data) => {
-    logInUser(data).then(() => {
-      history.push('/')
-    }).catch((message) => {
-      setError(message.message)
-    })
+  const isError = passwordError || emailError;
+  const isEmpty = !(emailValue && passwordValue);
+
+  const onSubmit = data => {
+    if (isEmpty || isError) {
+      return;
+    }
+    setLoading(true);
+    logInUser(data)
+      .then(() => {
+        history.push("/");
+      })
+      .catch(message => {
+        setError(message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  const validateEmail = () => {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailValue)) {
+      setEmailError(false);
+    } else {
+      setEmailError(true);
+    }
+  };
+
+  const validatePassword = () => {
+    if (passwordValue.length >= 6) {
+      setPasswordError(false);
+    } else {
+      setPasswordError(true);
+    }
   };
 
   return (
@@ -68,20 +101,48 @@ const LogIn = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="login__input-container">
           <label>Email</label>
-          <input type="text" name="email" placeholder="" ref={register} />
+          <input
+            className={`${emailError ? "email_error" : ""}`}
+            type="text"
+            name="email"
+            placeholder=""
+            ref={register}
+            onChange={e => {
+              setEmailValue(e.target.value);
+            }}
+            onBlur={() => validateEmail()}
+          />
+          {emailError ? <div>Nie poprawny adress email</div> : null}
           <label>Password</label>
           <input
+            className={`${passwordError ? "password_error" : ""}`}
             type="password"
             name="password"
             placeholder=""
             ref={register}
+            onChange={e => {
+              setPasswordValue(e.target.value);
+            }}
+            onBlur={() => validatePassword()}
           />
+          {passwordError ? (
+            <div>hasło musi być dłuższe niż 6 znaków</div>
+          ) : null}
         </div>
-        <div className="form__buttons">
-          <button type="submit">Login</button>
-          {error ? <p>{error}</p> : null}
-          <NavLink to="/signup">Sign up</NavLink>
-        </div>
+        {loading ? (
+          <div><Loading /></div>
+        ) : (
+          <div className="form__buttons">
+            <button
+              type="submit"
+              style={{ cursor: (isError || isEmpty) && "not-allowed" }}
+            >
+              Login
+            </button>
+            {error ? <p>{error}</p> : null}
+            <NavLink to="/signup">Sign up</NavLink>
+          </div>
+        )}
       </form>
     </div>
   );
