@@ -1,19 +1,25 @@
 .footer__container{
-  width: 5rem;;
-  height: 3rem;
-  
-   cursor: pointer;
-  margin:  0  5vw 1rem  0 ;
+  width: 10%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin: 0 5vw 1rem 0 ;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  border: 1px solid red; 
-
-  svg{
+  justify-content: space-between;
+  
+  .icon__svg-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: auto;  
+    
+    svg{
+    width: 100%;
+    height: auto;
     cursor: pointer;
-    path{
-      transform: translate(25%, 25%);
-    }
   }
+}
 }
 

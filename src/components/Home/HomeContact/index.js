@@ -97,7 +97,7 @@ const HomeContact = () => {
       ) : (
         <div className="contact__submit-container">
           <div className="contact__form-content">
-            <h1 className="contact__header">Contact with us!</h1>
+            <h1 className="contact__header">Contact us!</h1>
             <svg
               className="contact__decoration"
               xmlns="http://www.w3.org/2000/svg"

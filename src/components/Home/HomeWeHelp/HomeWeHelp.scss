@@ -42,19 +42,18 @@
     .header-till-active {
       border: 1px solid $main-grey;
     }
-
+  }
     .content-wrapper {
       height: 40%;
       width: 100%;
       margin-bottom: 3.35rem;
       height: auto;
         width: 100%;
-        border-bottom: 1px solid $main-grey;
-      
+        border: 1px solid red;
     }
    
         
-  }
+  
 
   .footer-wrapper {
     width: 100vw;
