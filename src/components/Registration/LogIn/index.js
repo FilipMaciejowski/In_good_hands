@@ -1,28 +1,40 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { logInUser } from "../../../firebase/firebase-actions/authentication";
+import { registerUser } from "../../../firebase/firebase-actions/authentication";
 import { useHistory } from "react-router";
 import Loading from '../../Home/HomeWeHelp/Loading';
 
-const LogIn = () => {
-  const { register, handleSubmit } = useForm();
+const SignUp = () => {
+  const { register, handleSubmit, watch, formState } = useForm({
+    mode: "onChange"
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [passwordConfirmError, setPasswordConfirmError] = useState(false);
+  const [nameError, setNameError] = useState(false);
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
+  const [passwordConfirmValue, setPasswordConfirmValue] = useState("");
+  const [nameValue, setNameValue] = useState("");
   const history = useHistory();
-  const isError = passwordError || emailError;
-  const isEmpty = !(emailValue && passwordValue);
+  const isError =
+    passwordError || emailError || nameError || passwordConfirmError;
+  const isEmpty = !(
+    emailValue &&
+    passwordValue &&
+    nameValue &&
+    passwordConfirmValue
+  );
 
   const onSubmit = data => {
     if (isEmpty || isError) {
       return;
     }
     setLoading(true);
-    logInUser(data)
+    registerUser(data)
       .then(() => {
         history.push("/");
       })
@@ -34,6 +46,14 @@ const LogIn = () => {
       });
   };
 
+  const validatePassword = isConfirm => {
+    if (passwordValue.length >= 6) {
+      isConfirm ? setPasswordConfirmError(false) : setPasswordError(false);
+    } else {
+      isConfirm ? setPasswordConfirmError(true) : setPasswordError(true);
+    }
+  };
+
   const validateEmail = () => {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailValue)) {
       setEmailError(false);
@@ -42,19 +62,19 @@ const LogIn = () => {
     }
   };
 
-  const validatePassword = () => {
-    if (passwordValue.length >= 6) {
-      setPasswordError(false);
+  const validateName = () => {
+    if (nameValue.length >= 3) {
+      setNameError(false);
     } else {
-      setPasswordError(true);
+      setNameError(true);
     }
   };
 
   return (
-    <div className="login__container">
-      <h1 className="login__header">Log in</h1>
+    <div className="signup__container">
+      <h1 className="signup__header">Sign up</h1>
       <svg
-        className="login__decoration"
+        className="signup__decoration"
         xmlns="http://www.w3.org/2000/svg"
         width="253"
         height="33"
@@ -99,11 +119,24 @@ const LogIn = () => {
         </g>
       </svg>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="login__input-container">
+        <div className="signup__input-container">
+          <label>Name</label>
+          <input
+            className={`${nameError ? "pname_error" : ""}`}
+            type="text"
+            name="userName"
+            placeholder=""
+            ref={register}
+            onChange={e => {
+              setNameValue(e.target.value);
+            }}
+            onBlur={() => validateName()}
+          />
+          {nameError ? <div>Imie musi być dłuższe niż 2 znaki</div> : null}
           <label>Email</label>
           <input
             className={`${emailError ? "email_error" : ""}`}
-            type="text"
+            type="email"
             name="email"
             placeholder=""
             ref={register}
@@ -123,24 +156,49 @@ const LogIn = () => {
             onChange={e => {
               setPasswordValue(e.target.value);
             }}
-            onBlur={() => validatePassword()}
+            onBlur={() => validatePassword(false)}
           />
           {passwordError ? (
             <div>hasło musi być dłuższe niż 6 znaków</div>
+          ) : null}
+          <label>Confirm Password</label>
+          <input
+            className={`${
+              passwordConfirmError ? "password_confirm_error" : ""
+            }`}
+            type="password"
+            name="confirmPassword"
+            ref={register({
+              validate: value => value === watch("password")
+            })}
+            placeholder=""
+            onChange={e => {
+              setPasswordConfirmValue(e.target.value);
+            }}
+            onBlur={() => validatePassword(true)}
+          />
+          {passwordConfirmError ? (
+            <div>potwierdzenie hasła musi być dłuższe niż 6 znaków</div>
+          ) : null}
+          {formState.isSubmitted &&
+          formState.password &&
+          formState.confirmPassword &&
+          !formState.isValid ? (
+            <p>Hasło i potwierdzenie hasła nie są takie same</p>
           ) : null}
         </div>
         {loading ? (
           <div><Loading /></div>
         ) : (
           <div className="form__buttons">
+            <NavLink to="/login">Log in</NavLink>
             <button
               type="submit"
               style={{ cursor: (isError || isEmpty) && "not-allowed" }}
             >
-              Login
+              sign up
             </button>
             {error ? <p>{error}</p> : null}
-            <NavLink to="/signup">Sign up</NavLink>
           </div>
         )}
       </form>
@@ -148,4 +206,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default SignUp;
