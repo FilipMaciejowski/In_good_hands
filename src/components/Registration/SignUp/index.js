@@ -70,6 +70,11 @@ const SignUp = () => {
     }
   };
 
+  const style = {
+    color: "red",
+    fontSize: "0.75rem"
+  }
+
   return (
     <div className="signup__container">
       <h1 className="signup__header">Sign up</h1>
@@ -122,7 +127,7 @@ const SignUp = () => {
         <div className="signup__input-container">
           <label>Name</label>
           <input
-            className={`${nameError ? "pname_error" : ""}`}
+            className={`${nameError ? "name_error" : ""}`}
             type="text"
             name="userName"
             placeholder=""
@@ -132,7 +137,9 @@ const SignUp = () => {
             }}
             onBlur={() => validateName()}
           />
-          {nameError ? <div>Imie musi być dłuższe niż 2 znaki</div> : null}
+          {nameError ? (
+            <div style={style}>Name should containa at least 2 characters</div>
+          ) : null}
           <label>Email</label>
           <input
             className={`${emailError ? "email_error" : ""}`}
@@ -145,7 +152,7 @@ const SignUp = () => {
             }}
             onBlur={() => validateEmail()}
           />
-          {emailError ? <div>Nie poprawny adress email</div> : null}
+          {emailError ? <div style={style}>incorrect email address</div> : null}
           <label>Password</label>
           <input
             className={`${passwordError ? "password_error" : ""}`}
@@ -159,7 +166,9 @@ const SignUp = () => {
             onBlur={() => validatePassword(false)}
           />
           {passwordError ? (
-            <div>hasło musi być dłuższe niż 6 znaków</div>
+            <div style={style}>
+              passord should contain at least 6 characters
+            </div>
           ) : null}
           <label>Confirm Password</label>
           <input
@@ -178,13 +187,15 @@ const SignUp = () => {
             onBlur={() => validatePassword(true)}
           />
           {passwordConfirmError ? (
-            <div>potwierdzenie hasła musi być dłuższe niż 6 znaków</div>
+            <div style={style}>
+              confirmation should contain at least 6 characters
+            </div>
           ) : null}
           {formState.isSubmitted &&
           formState.password &&
           formState.confirmPassword &&
           !formState.isValid ? (
-            <p>Hasło i potwierdzenie hasła nie są takie same</p>
+            <p style={style}>password and confirmation are not the same</p>
           ) : null}
         </div>
         {loading ? (

@@ -41,6 +41,7 @@
         font-size: 0.85rem;
         font-weight: 900;
       }
+      
       input {
         background-color: lighten($main-grey, 40%);
         border: none;
@@ -49,6 +50,21 @@
         font-family: $font-base;
         height: 2rem;
       }
+      input.name_error{
+        border-bottom: 2px solid red;
+      }
+
+      input.email_error{
+        border-bottom: 2px solid red;
+      }
+
+    input.password_error{
+       border-bottom: 2px solid red;
+    }
+
+    input.password_confirm_error{
+      border-bottom: 2px solid red;
+    }
       input:-webkit-autofill,
       input:-webkit-autofill:hover,
       input:-webkit-autofill:focus {
