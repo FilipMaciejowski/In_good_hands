@@ -9,6 +9,7 @@ const HomeThreeColumns = () => {
   const [supportedOrganisations, setSupportedOrganisations] = useState('0');
   const [organisedDonations, setOrganisedDonations] = useState('0');
   const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     if (organizations) {
@@ -44,30 +45,32 @@ const HomeThreeColumns = () => {
 
   return (
     <div className="three__columns-container">
-      <div className="three__columns-content">
+      <div className="three__columns-content-wrapper">
+        <div className="three__columns-content">
           <>
-            <Info
-              amout={donatedBags}
-              activities={"donated bags"}
-              description={
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, non quis provident culpa tempora ipsam."
-              }
-            />
-            <Info
-              amout={supportedOrganisations}
-              activities={"supported organisations"}
-              description={
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, non quis provident culpa tempora ipsam."
-              }
-            />
-            <Info
-              amout={organisedDonations}
-              activities={"organised donations"}
-              description={
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, non quis provident culpa tempora ipsam."
-              }
-            />
+          <Info
+            amout={donatedBags}
+            activities={"donated bags"}
+            description={
+              "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, non quis provident culpa tempora ipsam."
+            }
+          />
+          <Info
+            amout={supportedOrganisations}
+            activities={"supported organisations"}
+            description={
+              "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, non quis provident culpa tempora ipsam."
+            }
+          />
+          <Info
+            amout={organisedDonations}
+            activities={"organised donations"}
+            description={
+              "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, non quis provident culpa tempora ipsam."
+            }
+          />
           </>
+        </div>
       </div>
     </div>
   );

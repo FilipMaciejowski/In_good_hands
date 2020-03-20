@@ -1,12 +1,20 @@
-.three__columns-container {
+.three__columns-container{
+  width: 100vw;
+  height: auto;
+
+.three__columns-content-wrapper{
   width: 100vw;
   height: auto;
   background-image: url("../../../assets/images/3\ Columns\ Background.png");
   display: flex;
   justify-content: center;
+  
+  
+  
 
   .three__columns-content {
     width: 90vw;
+    height: 100%;
     padding: 0 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -43,4 +51,5 @@
     font-size: 0.85rem;
     margin-bottom: 4rem;
   }
+}
 }
