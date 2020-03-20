@@ -7,13 +7,12 @@ import HomeSimpleSteps from "./HomeSimpleSteps";
 import HomeAboutUs from "./HomeAboutUs";
 import HomeWeHelp from "./HomeWeHelp";
 import HomeContact from "./HomeContact";
-import HomeFooter from "./HomeFooter";
 
 
 const Home = () => {
   return (
     <div className="home__container">
-      <HomeHeader />
+      <HomeHeader image={"../../../assets/images/HOME-HERO-IMAGE.jpeg"} />
       <Element name="start">
         <HomeThreeColumns />
       </Element>

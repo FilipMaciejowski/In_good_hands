@@ -35,7 +35,9 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
-
+      p{
+        color: red;
+      }
       label {
         font-family: $font-base;
         font-size: 0.85rem;
@@ -58,7 +60,7 @@
         border-bottom: 2px solid red;
       }
 
-    input.password_error{
+      input.password_error{
        border-bottom: 2px solid red;
     }
 

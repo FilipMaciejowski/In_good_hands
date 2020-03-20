@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { logInUser } from "../../../firebase/firebase-actions/authentication";
 import { useHistory } from "react-router";
+import classnames from 'classnames'
 import Loading from '../../Home/HomeWeHelp/Loading';
 
 const LogIn = () => {
@@ -49,6 +50,13 @@ const LogIn = () => {
       setPasswordError(true);
     }
   };
+
+  const style ={
+    color: "red",
+    fontSize: "0.75rem"
+  }
+ 
+
 
   return (
     <div className="login__container">
@@ -112,10 +120,10 @@ const LogIn = () => {
             }}
             onBlur={() => validateEmail()}
           />
-          {emailError ? <div className="incorrect__email">incorrect email adress</div> : null}
+          {emailError ? <div style={style}>incorrect email adress</div> : null}
           <label>Password</label>
           <input
-            className={`${(passwordError || error) ? "password_error" : ""}`}
+            className={classnames('input__normal', {password_error: passwordError || error})}
             type="password"
             name="password"
             placeholder=""
@@ -126,7 +134,7 @@ const LogIn = () => {
             onBlur={() => validatePassword()}
           />
           {passwordError ? (
-            <div className="password__error">password should be longer than 6 characters</div>
+            <div style={style}>password should be longer than 6 characters</div>
           ) : null}
         </div>
         {loading ? (
@@ -141,7 +149,7 @@ const LogIn = () => {
             >
               Login
             </button>
-            {error ? <p style={{color: "red"}}>invalid password!</p> : null}
+            {error ? <p style={{ color: "red", marginTop: ".5rem" }}>invalid password!</p> : null}
             <NavLink to="/signup">Sign up</NavLink>
           </div>
         )}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import classnames from 'classnames'
 import Loading from "../HomeWeHelp/Loading";
 import HomeFooter from "../HomeFooter";
 
@@ -88,6 +89,7 @@ const HomeContact = () => {
       });
   };
 
+  
   return (
     <div className="contact__container">
       <div className="contact__left-side">
@@ -172,9 +174,9 @@ const HomeContact = () => {
                     ) : null}
                   </div>
                   <div className="input__element-container">
-                    <label>Enter your email</label>
+                    <label>Enter your email</label> 
                     <input
-                      className={`${emailError ? "email_error" : ""}`}
+                      className={classnames("", {message__error: emailError })}
                       type="email"
                       name="email"
                       placeholder=""
@@ -185,19 +187,29 @@ const HomeContact = () => {
                       onBlur={() => validateEmail()}
                     />
                   </div>
-                  {emailError ? <div>Wpisz poprawny adres email</div> : null}
+                  {emailError ? (
+                    <div className="contact__incorect-email">
+                      Enter correct email
+                    </div>
+                  ) : null}
                 </div>
                 <label>Enter your message</label>
                 <textarea
                   placeholder=""
-                  className={`${errorMessage ? "message_error" : ""}`}
+                  className={classnames("", { message__error: errorMessage })}
                   name="message"
                   ref={register}
                   onChange={e => setMessageValue(e.target.value)}
                   onBlur={() => messageValidation()}
                 />
                 {errorMessage ? (
-                  <div>
+                  <div
+                    style={{
+                      color: "red",
+                      fontSize: ".75rem",
+                      marginTop: ".25rem"
+                    }}
+                  >
                     the message should be longer or equal to 120 characters{" "}
                   </div>
                 ) : null}
@@ -211,9 +223,13 @@ const HomeContact = () => {
                 </button>
               </div>
             </form>
-            {error ? <div>something went wrong, try again later</div> : null}
+            {error ? (
+              <div style={{ color: "red" }}>
+                something went wrong, try again later
+              </div>
+            ) : null}
             {successMessage ? (
-              <div>The message has been sent correctly</div>
+              <div>The message has been sent correctly!</div>
             ) : null}
           </div>
           <HomeFooter />

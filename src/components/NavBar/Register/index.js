@@ -22,8 +22,10 @@ const Register = () => {
     <div className="registration__menu">
       {userState ? (
         <div className="registration__menu-logout">
-          <p className="user__login">Hi {userData.user.userName}!</p>
+          <div className="registration__menu-content">
+          <p style={{fontSize:"1rem"}}className="user__login">Hi {userData.user.userName}!</p>
           <button onClick={() => logOut()}>Log out</button>
+          </div>
         </div>
       ) : (
         <div className="registration__menu-main">

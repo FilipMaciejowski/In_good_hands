@@ -1,3 +1,10 @@
+header {
+  width: 50vw;
+  height: auto; 
+  border: 1px solid blue; 
+  
+}
+
 .till {
   padding: .75rem 1rem;
   border: 1px solid gray;
@@ -5,5 +12,11 @@
   margin: .75rem;
   cursor: pointer;
 }
+
+.active{
+  background-color:$main-yellow; 
+}
+
+
 
 

@@ -12,6 +12,7 @@ const HomeWeHelp = () => {
   const [activePagination, setActivePagination] = useState(1);
   const [minIndex, setMinIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(2);
+  const [businessName, setBusinessName] = useState("");
   const organizations = useSelector(state => state.formData.organizations);
 
   const dispatch = useDispatch();
@@ -83,26 +84,26 @@ const HomeWeHelp = () => {
     }
   };
 
+  
+
   const setOrganizationsContent = () => {
     return (
       <>
-        {organizationByTypes[activeType] === undefined
-          ?
+        {organizationByTypes[activeType] === undefined ? (
           <div>
-            There is no organization added yet. Add the first one! !
+            {`There is no ${organizationsTypes[activeType]}added yet. Add the first one!`}
           </div>
-          :
+        ) : (
           <div>
             {organizationByTypes[activeType].map((organization, index) => {
               if (index >= minIndex && index <= maxIndex) {
-                return <div  key={`${activeType + index}`}>{organization}</div>
+                return <div key={`${activeType + index}`}>{organization}</div>;
               }
-
             })}
           </div>
-        }
+        )}
       </>
-    )
+    );
   };
 
   return (

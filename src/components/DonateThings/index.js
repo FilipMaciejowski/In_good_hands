@@ -4,6 +4,8 @@ import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { addDonateItemsData } from '../../redux/actions/form-actions'
 import organizationsTypes from "../../constans/organizationsTypes";
+import HomeContact from '../Home/HomeContact';
+import HomeHeader from '../Home/HomeHeader';
 
 const tillsInitialValue = {
   children: false,
@@ -438,14 +440,17 @@ const DonateThings = () => {
   };
 
   return (
+    <>
+    <HomeHeader />
     <div style={{marginTop: 120}}>
+      
       { loading ?
         <div>Sending data (loading)</div>
         :
         <div>
         { sendDataError ?
             <div>
-              Błąd połączenia z bazą danych, spróbuj jeszcze raz
+              Connection with database lost.
             </div>
             :
             <div>
@@ -455,9 +460,11 @@ const DonateThings = () => {
         }
         </div>
       }
+      <HomeContact />
     </div>
-    
+    </>
   )
+
 };
 
 export default DonateThings;

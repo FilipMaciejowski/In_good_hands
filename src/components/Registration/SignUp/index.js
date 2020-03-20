@@ -142,7 +142,7 @@ const SignUp = () => {
           ) : null}
           <label>Email</label>
           <input
-            className={`${emailError ? "email_error" : ""}`}
+            className={`${emailError || error ? "email_error" : ""}`}
             type="email"
             name="email"
             placeholder=""
@@ -153,6 +153,7 @@ const SignUp = () => {
             onBlur={() => validateEmail()}
           />
           {emailError ? <div style={style}>incorrect email address</div> : null}
+
           <label>Password</label>
           <input
             className={`${passwordError ? "password_error" : ""}`}
@@ -197,6 +198,7 @@ const SignUp = () => {
           !formState.isValid ? (
             <p style={style}>password and confirmation are not the same</p>
           ) : null}
+          {error ? <p>{error}</p> : null}
         </div>
         {loading ? (
           <div>
@@ -211,7 +213,6 @@ const SignUp = () => {
             >
               sign up
             </button>
-            {error ? <p>{error}</p> : null}
           </div>
         )}
       </form>

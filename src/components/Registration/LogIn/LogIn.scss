@@ -48,21 +48,16 @@
         border-bottom: 2px solid $main-grey;
         outline: none;
         font-family: $font-base;
-       height: 1.5rem;
+        height: 1.5rem;
       }
       input.email_error{
         border-bottom: 2px solid red;
       }
+      
       input.password_error{
         border-bottom: 2px solid red;
       }
-      .incorrect__email{
-        color: red;
-      }
-
-      .password__error{
-        color: red;
-      }
+      
       input:-webkit-autofill,
       input:-webkit-autofill:hover,
       input:-webkit-autofill:focus {
@@ -94,7 +89,7 @@
       width: 20rem;
       display: flex;
       justify-content: space-between;
-      p{
+        p{
         width: 50%;
         transform: translateX(25%);
         position: relative;
