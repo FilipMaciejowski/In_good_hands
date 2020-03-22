@@ -9,7 +9,8 @@ import HomeWeHelp from "./HomeWeHelp";
 import HomeContact from "./HomeContact";
 
 
-const Home = () => {
+const Home = (props) => {
+  console.log(props)
   return (
     <div className="home__container">
       <HomeHeader image={"../../../assets/images/HOME-HERO-IMAGE.jpeg"} />

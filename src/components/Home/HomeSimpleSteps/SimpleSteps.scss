@@ -42,10 +42,7 @@
     margin: 2.5rem 0;
     display: flex;
     justify-content: center;
-    .simple__steps-button {
-      margin: 1.5rem 0;
-      display: flex;
-      flex-direction: column;
+    a {
     width: 12.5rem;
     height: auto;
     border: 1px solid $main-grey;
@@ -58,6 +55,7 @@
     color: $main-grey;
     cursor: pointer;
     text-decoration: none;
-    }
+  
+  }
   }
 }

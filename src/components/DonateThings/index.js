@@ -299,7 +299,7 @@ const DonateThings = () => {
               ref={register}
             >
               <option value="" disabled>
-                -- Wybierz --
+                -- Choose --
               </option>
               <option value="poznan">Bergen</option>
               <option value="warszawa">Kristiansand</option>
@@ -313,31 +313,31 @@ const DonateThings = () => {
           </div>
           <div>
             <div
-              className={`till ${tillsValue.children ? "active" : ""}`}
+              className={`till ${tillsValue.children ? "help__active" : ""}`}
               onClick={() => changeTillValue("children")}
             >
               {people.children}
             </div>
             <div
-              className={`till ${tillsValue.mothers ? "active" : ""}`}
+              className={`till ${tillsValue.mothers ? "help__active" : ""}`}
               onClick={() => changeTillValue("mothers")}
             >
               {people.mothers}
             </div>
             <div
-              className={`till ${tillsValue.homeless ? "active" : ""}`}
+              className={`till ${tillsValue.homeless ? "help__active" : ""}`}
               onClick={() => changeTillValue("homeless")}
             >
               {people.homeless}
             </div>
             <div
-              className={`till ${tillsValue.disabledPeople ? "active" : ""}`}
+              className={`till ${tillsValue.disabledPeople ? "help__active" : ""}`}
               onClick={() => changeTillValue("disabledPeople")}
             >
               {people.disabledPeople}
             </div>
             <div
-              className={`till ${tillsValue.oldPeople ? "active" : ""}`}
+              className={`till ${tillsValue.oldPeople ? "help__active" : ""}`}
               onClick={() => changeTillValue("oldPeople")}
             >
               {people.oldPeople}

@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Step from './Step';
+import { useSelector } from "react-redux";
+
+
+
 
 
 const HomeSimpleSteps = () =>{
+
+ const userData = useSelector(state => state.userData);
  
+ const [userState, setUserState] = useState(false);
+
+useEffect(() => {
+  setUserState(userData.logged);
+}, [userData]);
+
+
 
   return (
     <div className="siple__steps-container">
@@ -95,10 +108,21 @@ const HomeSimpleSteps = () =>{
         </div>
       </div>
       <div className="simple__steps-button-container">
-        <Link className="simple__steps-button" to="/login">
-          <span>Donate</span>
-          <span>items</span>
-        </Link>
+        <>
+          {userState ? (
+            <Link to="/give-things-back">
+              Donate
+              <br />
+              items
+            </Link>
+          ) : (
+            <Link to="/login">
+              Donate
+              <br />
+              items
+            </Link>
+          )}
+        </>
       </div>
     </div>
   );

@@ -16,6 +16,7 @@ const Banner = () =>{
   useEffect(() => {
     setUserPending(userStatus === "PENDING");
   },[userStatus]);
+  
   return (
     <div className="home__header-banner">
       <div className="home__header-banner-content">
