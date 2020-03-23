@@ -67,10 +67,11 @@
             height: 100%;
             top: 0;
             left: 0;
-            border: 1px solid $main-grey-dark;
+            border: 2px solid $main-grey-dark;
+            border-radius: 22.5%;
             transform: rotate(45deg);
           }
-          &::before {
+          /* &::before {
             content: "";
             position: absolute;
             width: 100%;
@@ -79,12 +80,12 @@
             left: 10px;
             border: 1px solid lighten($main-yellow, 5%);
             transform: rotate(45deg);
-          }
+          } */
         }
         .step__element-text {
           font: $font-base;
           color: $main-grey-dark;
-          font-weight: 700;
+          font-weight: 900;
           font-size: 0.75rem;
         }
       
