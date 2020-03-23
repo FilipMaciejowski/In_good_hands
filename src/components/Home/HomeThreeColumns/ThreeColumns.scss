@@ -1,15 +1,16 @@
 .three__columns-container{
   width: 100vw;
   height: auto;
+  position: relative;
+  top: -10px;
+  left: 0;
+  background-image: url("../../../assets/images/3\ Columns\ Background.png");
 
 .three__columns-content-wrapper{
   width: 100vw;
   height: auto;
-  background-image: url("../../../assets/images/3\ Columns\ Background.png");
   display: flex;
   justify-content: center;
-  
-  
   
 
   .three__columns-content {
