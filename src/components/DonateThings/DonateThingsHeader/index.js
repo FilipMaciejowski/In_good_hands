@@ -60,14 +60,16 @@ const DonateThingsHeader = () =>{
             <div className="banner__bottom-content">
               <div className="step__element">
                 <p className="step__element-text">
-                  1<br />
+                  <b>1</b>
+                  <br />
                   Choose
                   <br /> items
                 </p>
               </div>
               <div className="step__element">
                 <p className="step__element-text">
-                  2<br />
+                  <b>2</b>
+                  <br />
                   Pack them
                   <br />
                   into bags
@@ -75,7 +77,8 @@ const DonateThingsHeader = () =>{
               </div>
               <div className="step__element">
                 <p className="step__element-text">
-                  3<br />
+                  <b>3</b>
+                  <br />
                   Choose
                   <br />
                   foundation
@@ -83,7 +86,8 @@ const DonateThingsHeader = () =>{
               </div>
               <div className="step__element">
                 <p className="step__element-text">
-                  4<br />
+                  <b>4</b>
+                  <br />
                   Book
                   <br />
                   delivery man

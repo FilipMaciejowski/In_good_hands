@@ -75,9 +75,15 @@
         .step__element-text {
           font: $font-base;
           color: $main-grey-dark;
-          font-weight: 900;
-          font-size: 0.75rem;
+          font-weight: 100;
+          font-size: 0.8rem;
+
+          b{
+             font-size: 0.9rem;
+             margin-bottom: .25rem;
+          }
         }
+        
       
     }
   }
