@@ -5,18 +5,23 @@
 
 .registration__menu-logout{
   display: flex;
-  width: 30%;;
+  width: 50%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-bottom: .25rem;
   .registration__menu-content{
-    width: 75%;
+    width: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
   }
   button{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     text-decoration: none;
     font-family: $font-base;
     font-size: .75rem;
@@ -27,22 +32,33 @@
     cursor: pointer;
     text-align: right;
   }
+  a {
+    width: auto;
+    font-size: .75rem;
+    text-decoration: none;
+    font-family: $font-base;
+    color: $main-grey;
+    padding: .5rem .5rem;
+    border: 1px solid #fff;
+  }
+ 
 
 }
 .registration__menu-main{
   width: 50%;;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: .25rem;
 .user__login{
   color: $main-grey;
 }
-  a{
+  a {
+    width: auto;
     font-size: .75rem;
     text-decoration: none;
     font-family: $font-base;
     color: $main-grey;
-    padding: .5rem .75rem;
+    padding: .5rem .5rem;
     border: 1px solid #fff;
   }
   a:nth-of-type(3){

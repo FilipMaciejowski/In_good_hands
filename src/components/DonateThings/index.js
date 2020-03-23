@@ -387,7 +387,6 @@ const DonateThings = () => {
       </div>
     );
   };
-
   const stepFour = () => {
     return (
       <div>

@@ -40,7 +40,7 @@ const Register = () => {
       {userState ? (
         <div className="registration__menu-logout">
           <div className="registration__menu-content">
-            <p style={{ fontSize: "1rem" }} className="user__login">
+            <p style={{ fontSize: "1rem", marginRight: "1rem" }} className="user__login">
               Hi {userData.user.userName}!
             </p>
             <button onClick={() => logOut()}>Log out</button>
@@ -51,7 +51,6 @@ const Register = () => {
         <div className="registration__menu-main">
           <NavLink to="/login">Login</NavLink>
           <NavLink to="/signup">Sign up</NavLink>
-
           {renderLocation()}
         </div>
       )}
