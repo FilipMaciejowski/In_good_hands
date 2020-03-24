@@ -99,6 +99,7 @@
         height: 2rem;
         border: 2px solid $main-grey;
         cursor: pointer;
+        transition: .1s linear;
         &:checked{
         background-color: $main-yellow;
       }
@@ -108,12 +109,11 @@
       height: auto;
       width: fit-content;
       border: 1px solid $main-grey-dark;
-      padding: 1rem 2rem;
+      padding: 1rem 3rem;
       margin-top: 5rem;
       background-color:#00000000;
       outline: none;
       cursor: pointer;
-      
       }
       .step__1-error-message{
         margin-top: 3rem;

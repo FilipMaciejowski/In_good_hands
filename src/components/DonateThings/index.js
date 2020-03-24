@@ -271,7 +271,7 @@ const DonateThings = () => {
               You have to choose at least one item!
             </div>
           ) : null}
-          <button type="submit">Dalej</button>
+          <button type="submit">Next</button>
         </form>
       </div>
     );
