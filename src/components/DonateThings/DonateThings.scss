@@ -1,22 +1,10 @@
-
-.till {
-  padding: .75rem 1rem;
-  border: 1px solid gray;
-  width: fit-content;
-  margin: .75rem;
-  cursor: pointer;
-}
-
-.help__active{
-  background-color:$main-yellow; 
-}
-
 .step__info{
   position: relative;
   height: 7.5rem;
   width: 100%;
   display: flex;
   align-items: center;
+  background-color: darken($main-yellow, 10%);
   
   .step__info-content {
   position: absolute;
@@ -37,6 +25,8 @@
     display: flex;
     flex-direction: column;
     justify-content:  center;
+    position: relative; 
+    top: 5px; 
   
     p{
       width: 80%;
@@ -47,13 +37,9 @@
       color: $main-grey-dark;
       display: block;
       margin-top: .5rem
-      
-
-
     }
     h1{
       margin: 0;
-      
       width: 80%;
       height: auto;
       font-family: $font-base;
@@ -64,6 +50,48 @@
       }
   }
 }
+}
+
+
+.stepper__main-container{
+  height: 110vh;
+  width: 100vw;
+  background: url(../../assets/images/stepper.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  .steps__container{
+    width: 90%;
+    display: flex; 
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    color: $main-grey-dark;
+    font-family: $font-base;
+  }
+  .stepper{
+    height: 100%;
+    width: 90%;
+    border: 1px solid blue;
+  }
+
+}
+
+
+.till {
+  padding: .75rem 1rem;
+  border: 1px solid gray;
+  width: fit-content;
+  margin: .75rem;
+  cursor: pointer;
+}
+
+.help__active{
+  background-color:$main-yellow; 
 }
   
 

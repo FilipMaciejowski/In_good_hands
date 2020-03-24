@@ -665,11 +665,13 @@ const DonateThings = () => {
               <div>Connection with database lost.</div>
             ) : (
               <div className="stepper-container">
-                <div className="step__info">
-                  {returnMyDiv()}
+                <div className="step__info">{returnMyDiv()}</div>
+                <div className="stepper__main-container">
+                  <div className="steps__container">
+                    {step < 5 ? <p>Step {step}/4</p> : null}
+                  </div>
+                  <div className="stepper">{returnCurrentStep()}</div>
                 </div>
-                {step < 5 ? <p>krok{step}/4</p> : null}
-                {returnCurrentStep()}
               </div>
             )}
           </div>
