@@ -77,6 +77,52 @@
     height: 100%;
     width: 90%;
     border: 1px solid blue;
+    h1.step__header{
+      font-family: $font-base;
+      color:  $main-grey-dark;
+      margin-bottom: 2.5rem;
+    }
+    .step__1{
+      .step__1-input-container{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      label{
+        color: $main-grey-dark;
+        font-family: $font-base;
+        margin-left: 1rem;
+      }
+      input.step__1-checkbox{
+        outline: none;
+        appearance: none;
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid $main-grey;
+        cursor: pointer;
+        &:checked{
+        background-color: $main-yellow;
+      }
+      }
+      }
+      button{
+      height: auto;
+      width: fit-content;
+      border: 1px solid $main-grey-dark;
+      padding: 1rem 2rem;
+      margin-top: 5rem;
+      background-color:#00000000;
+      outline: none;
+      cursor: pointer;
+      
+      }
+      .step__1-error-message{
+        margin-top: 3rem;
+        font-family: $font-base;
+        color: red;
+      }
+    }
+    
+    
   }
 
 }
@@ -84,7 +130,7 @@
 
 .till {
   padding: .75rem 1rem;
-  border: 1px solid gray;
+  border: 1px solid $main-grey-dark;
   width: fit-content;
   margin: .75rem;
   cursor: pointer;

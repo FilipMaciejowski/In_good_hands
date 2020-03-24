@@ -184,69 +184,91 @@ const DonateThings = () => {
   const stepOne = () => {
     return (
       <div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input
-            type="checkbox"
-            id="secondhandClothes"
-            name="secondhandClothes"
-            ref={register}
-            defaultChecked={
-              formData.firstStep ? formData.firstStep.secondhandClothes : false
-            }
-          />
-          <label htmlFor="secondhandClothes">
-            {itemsToGiveBack.secondhandClothes}
-          </label>
+        <h1 className="step__header">Choose items you would like to add: </h1>
+        <form className="step__1" onSubmit={handleSubmit(onSubmit)}>
+          <div className="step__1-input-container">
+            <input
+              className="step__1-checkbox"
+              type="checkbox"
+              id="secondhandClothes"
+              name="secondhandClothes"
+              ref={register}
+              defaultChecked={
+                formData.firstStep
+                  ? formData.firstStep.secondhandClothes
+                  : false
+              }
+            />
+            <label htmlFor="secondhandClothes">
+              {itemsToGiveBack.secondhandClothes}
+            </label>
+          </div>
           <br />
-          <input
-            type="checkbox"
-            id="clothesToThrowAway"
-            name="clothesToThrowAway"
-            ref={register}
-            defaultChecked={
-              formData.firstStep ? formData.firstStep.clothesToThrowAway : false
-            }
-          />
-          <label htmlFor="clothesToThrowAway">
-            {itemsToGiveBack.clothesToThrowAway}
-          </label>
+          <div className="step__1-input-container">
+            <input
+              className="step__1-checkbox"
+              type="checkbox"
+              id="clothesToThrowAway"
+              name="clothesToThrowAway"
+              ref={register}
+              defaultChecked={
+                formData.firstStep
+                  ? formData.firstStep.clothesToThrowAway
+                  : false
+              }
+            />
+            <label htmlFor="clothesToThrowAway">
+              {itemsToGiveBack.clothesToThrowAway}
+            </label>
+          </div>
           <br />
-          <input
-            type="checkbox"
-            id="toys"
-            name="toys"
-            ref={register}
-            defaultChecked={
-              formData.firstStep ? formData.firstStep.toys : false
-            }
-          />
-          <label htmlFor="toys">{itemsToGiveBack.toys}</label>
+          <div className="step__1-input-container">
+            <input
+              className="step__1-checkbox"
+              type="checkbox"
+              id="toys"
+              name="toys"
+              ref={register}
+              defaultChecked={
+                formData.firstStep ? formData.firstStep.toys : false
+              }
+            />
+            <label htmlFor="toys">{itemsToGiveBack.toys}</label>
+          </div>
           <br />
-          <input
-            type="checkbox"
-            id="books"
-            name="books"
-            ref={register}
-            defaultChecked={
-              formData.firstStep ? formData.firstStep.books : false
-            }
-          />
-          <label htmlFor="books">{itemsToGiveBack.books}</label>
+          <div className="step__1-input-container">
+            <input
+              className="step__1-checkbox"
+              type="checkbox"
+              id="books"
+              name="books"
+              ref={register}
+              defaultChecked={
+                formData.firstStep ? formData.firstStep.books : false
+              }
+            />
+            <label htmlFor="books">{itemsToGiveBack.books}</label>
+          </div>
           <br />
-          <input
-            type="checkbox"
-            id="anotherThings"
-            name="anotherThings"
-            ref={register}
-            defaultChecked={
-              formData.firstStep ? formData.firstStep.anotherThings : false
-            }
-          />
-          <label htmlFor="anotherThings">{itemsToGiveBack.anotherThings}</label>
+          <div className="step__1-input-container">
+            <input
+              className="step__1-checkbox"
+              type="checkbox"
+              id="anotherThings"
+              name="anotherThings"
+              ref={register}
+              defaultChecked={
+                formData.firstStep ? formData.firstStep.anotherThings : false
+              }
+            />
+            <label htmlFor="anotherThings">
+              {itemsToGiveBack.anotherThings}
+            </label>
+          </div>
           <br />
           {errorFirstStep ? (
-            <div className="error-message">
-              Musisz zaznaczyć przynajmniej jedną rzecz
+            <div className="step__1-error-message">
+              You have to choose at least one item!
             </div>
           ) : null}
           <button type="submit">Dalej</button>
