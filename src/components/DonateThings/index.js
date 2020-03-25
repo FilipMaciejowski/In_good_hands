@@ -451,84 +451,94 @@ const DonateThings = () => {
       <>
         <h1 className="step__header">Address and date of pick-up:</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="step__3__step-inputs-wrapper">
-            <div className="address-column">
-              <label htmlFor="street">Street</label>
-              <input
-                type="text"
-                id="street"
-                name="street"
-                ref={register}
-                defaultValue={
-                  formData.fourthStep ? formData.fourthStep.street : ""
-                }
-              />
-              <label htmlFor="city">City</label>
-              <input
-                type="text"
-                id="city"
-                name="city"
-                ref={register}
-                defaultValue={
-                  formData.fourthStep ? formData.fourthStep.city : ""
-                }
-              />
-
-              <label htmlFor="zipCode">Zip Code</label>
-              <input
-                type="text"
-                id="zipCode"
-                name="zipCode"
-                ref={register}
-                defaultValue={
-                  formData.fourthStep ? formData.fourthStep.zipCode : ""
-                }
-              />
-
-              <label htmlFor="phone">Telephone number</label>
-              <input
-                type="text"
-                id="phone"
-                name="phone"
-                ref={register}
-                defaultValue={
-                  formData.fourthStep ? formData.fourthStep.phone : ""
-                }
-              />
+          <div className="step__4__step-inputs-wrapper">
+            <div className="column__content">
+              <div className="step__4__input-item-container">
+                <label htmlFor="street">Street</label>
+                <input
+                  type="text"
+                  id="street"
+                  name="street"
+                  ref={register}
+                  defaultValue={
+                    formData.fourthStep ? formData.fourthStep.street : ""
+                  }
+                />
+              </div>
+              <div className="step__4__input-item-container">
+                <label htmlFor="city">City</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  ref={register}
+                  defaultValue={
+                    formData.fourthStep ? formData.fourthStep.city : ""
+                  }
+                />
+              </div>
+              <div className="step__4__input-item-container">
+                <label htmlFor="zipCode">Zip Code</label>
+                <input
+                  type="text"
+                  id="zipCode"
+                  name="zipCode"
+                  ref={register}
+                  defaultValue={
+                    formData.fourthStep ? formData.fourthStep.zipCode : ""
+                  }
+                />
+              </div>
+              <div className="step__4__input-item-container">
+                <label htmlFor="phone">Telephone<br/> number</label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  ref={register}
+                  defaultValue={
+                    formData.fourthStep ? formData.fourthStep.phone : ""
+                  }
+                />
+              </div>
             </div>
 
-            <div className="term-column">
-              <label htmlFor="date">Data</label>
-              <input
-                type="text"
-                id="date"
-                name="date"
-                ref={register}
-                defaultValue={
-                  formData.fourthStep ? formData.fourthStep.date : ""
-                }
-              />
-
-              <label htmlFor="hours">Hour</label>
-              <input
-                type="text"
-                id="hours"
-                name="hours"
-                ref={register}
-                defaultValue={
-                  formData.fourthStep ? formData.fourthStep.hours : ""
-                }
-              />
-
-              <label htmlFor="note">Comments for delivery man</label>
-              <textarea
-                id="note"
-                name="note"
-                ref={register}
-                defaultValue={
-                  formData.fourthStep ? formData.fourthStep.note : ""
-                }
-              />
+            <div className="column__content">
+              <div className="step__4__input-item-container">
+                <label htmlFor="date">Data</label>
+                <input
+                  type="text"
+                  id="date"
+                  name="date"
+                  ref={register}
+                  defaultValue={
+                    formData.fourthStep ? formData.fourthStep.date : ""
+                  }
+                />
+              </div>
+              <div className="step__4__input-item-container">
+                <label htmlFor="hours">Hour</label>
+                <input
+                  type="text"
+                  id="hours"
+                  name="hours"
+                  ref={register}
+                  defaultValue={
+                    formData.fourthStep ? formData.fourthStep.hours : ""
+                  }
+                />
+              </div>
+              <div className="step__4__input-item-container">
+                <label htmlFor="note">Comments for<br/> delivery man</label>
+                <textarea
+                  id="note"
+                  name="note"
+                  ref={register}
+                  defaultValue={
+                    formData.fourthStep ? formData.fourthStep.note : ""
+                  }
+                />
+              </div>
             </div>
           </div>
           <br />
@@ -642,15 +652,15 @@ const DonateThings = () => {
 
   const returnCurrentStep = () => {
     if (step === 1) {
-      return stepOne();
+     /*  return stepOne();
     } else if (step === 2) {
       return stepTwo();
-    } else if (step === 3) {
+    } else if (step === 3) { */
       return stepThree();
-    } else if (step === 4) {
+ /*  } else if (step === 4) {
       return stepFour();
     } else if (step === 5) {
-      return summary();
+      return summary(); */
     }
   };
 
