@@ -1,59 +1,56 @@
-.step__info{
+.step__info {
   position: relative;
   height: 7.5rem;
   width: 100%;
   display: flex;
   align-items: center;
   background-color: darken($main-yellow, 10%);
-  
+
   .step__info-content {
-  position: absolute;
-  top: -10%;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: darken($main-yellow, 10%);
-  display: flex;
-  justify-content: center;
-  align-items:  center;
-  
-  
-  
-  .step__info-content-banner{
-    height: 50%;
-    width: 80%;
+    position: absolute;
+    top: -10%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: darken($main-yellow, 10%);
     display: flex;
-    flex-direction: column;
-    justify-content:  center;
-    position: relative; 
-    top: 5px; 
-  
-    p{
+    justify-content: center;
+    align-items: center;
+
+    .step__info-content-banner {
+      height: 50%;
       width: 80%;
-      height:auto;
-      font-family: $font-base;
-      font-weight: 300;
-      font-size: 1rem;
-      color: $main-grey-dark;
-      display: block;
-      margin-top: .5rem
-    }
-    h1{
-      margin: 0;
-      width: 80%;
-      height: auto;
-      font-family: $font-base;
-      font-weight: 900;
-      font-size: 1.75rem;
-      color: $main-grey-dark;
-      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      top: 5px;
+
+      p {
+        width: 80%;
+        height: auto;
+        font-family: $font-base;
+        font-weight: 300;
+        font-size: 1rem;
+        color: $main-grey-dark;
+        display: block;
+        margin-top: 0.5rem;
       }
+
+      h1 {
+        margin: 0;
+        width: 80%;
+        height: auto;
+        font-family: $font-base;
+        font-weight: 900;
+        font-size: 1.75rem;
+        color: $main-grey-dark;
+      }
+    }
   }
 }
-}
 
-
-.stepper__main-container{
+.stepper__main-container {
   height: 110vh;
   width: 100vw;
   background: url(../../assets/images/stepper.jpg);
@@ -62,85 +59,99 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: space-between;
-  .steps__container{
+
+  .steps__container {
     width: 90%;
-    display: flex; 
-    align-items: center;
-    justify-content: flex-start;
+    border: 1px solid orange;
     margin-top: 1.5rem;
     font-size: 1.25rem;
     color: $main-grey-dark;
     font-family: $font-base;
   }
-  .stepper{
-    height: 100%;
+  .stepper {
     width: 90%;
+    height: 65%;
     border: 1px solid blue;
-    h1.step__header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    h1.step__header {
+      border: 1px solid violet;
       font-family: $font-base;
-      color:  $main-grey-dark;
-      margin-bottom: 2.5rem;
+      color: $main-grey-dark;
+      margin: 2rem 0 2rem 0;
     }
-    .step__1{
-      .step__1-input-container{
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-      label{
-        color: $main-grey-dark;
-        font-family: $font-base;
-        margin-left: 1rem;
+    form {
+      height: 100%;
+      width: 100%;
+      border: 1px solid red;
+      .step-inputs-wrapper {
+        height: 75%;
+        border: 1px solid green;
+        .step__input-item-container {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          label {
+            color: $main-grey-dark;
+            font-family: $font-base;
+            margin-left: 1rem;
+          }
+          label.number__of__bags {
+            margin-right: 1.5rem;
+          }
+          input.step__1-checkbox {
+            outline: none;
+            appearance: none;
+            width: 2rem;
+            height: 2rem;
+            border: 2px solid $main-grey;
+            cursor: pointer;
+            transition: 0.1s linear;
+            &:checked {
+              background-color: $main-yellow;
+            }
+          }
+        }
       }
-      input.step__1-checkbox{
-        outline: none;
-        appearance: none;
-        width: 2rem;
-        height: 2rem;
-        border: 2px solid $main-grey;
-        cursor: pointer;
-        transition: .1s linear;
-        &:checked{
-        background-color: $main-yellow;
-      }
-      }
-      }
-      button{
-      height: auto;
-      width: fit-content;
-      border: 1px solid $main-grey-dark;
-      padding: 1rem 3rem;
-      margin-top: 5rem;
-      background-color:#00000000;
-      outline: none;
-      cursor: pointer;
-      }
-      .step__1-error-message{
-        margin-top: 3rem;
+
+      .error-message {
+        margin-top: 1rem;
         font-family: $font-base;
         color: red;
       }
+      .step__buttons-container {
+        border: 1px solid tomato;
+        width: 20rem;
+        display: flex;
+        justify-content: space-between;
+      }
+      .btn__step {
+        height: auto;
+        width: fit-content;
+        border: 1px solid $main-grey-dark;
+        padding: 1rem 3rem;
+        background-color: #00000000;
+        outline: none;
+        cursor: pointer;
+      }
     }
-    
-    
+    .number__of__bags{
+      margin-right: 2.5rem;
+    }
   }
-
 }
 
-
 .till {
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   border: 1px solid $main-grey-dark;
   width: fit-content;
-  margin: .75rem;
+  margin: 0.75rem;
   cursor: pointer;
 }
 
-.help__active{
-  background-color:$main-yellow; 
+.help__active {
+  background-color: $main-yellow;
 }
-  
-
-
-
-

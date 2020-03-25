@@ -183,87 +183,89 @@ const DonateThings = () => {
 
   const stepOne = () => {
     return (
-      <div>
+      <>
         <h1 className="step__header">Choose items you would like to add: </h1>
-        <form className="step__1" onSubmit={handleSubmit(onSubmit)}>
-          <div className="step__1-input-container">
-            <input
-              className="step__1-checkbox"
-              type="checkbox"
-              id="secondhandClothes"
-              name="secondhandClothes"
-              ref={register}
-              defaultChecked={
-                formData.firstStep
-                  ? formData.firstStep.secondhandClothes
-                  : false
-              }
-            />
-            <label htmlFor="secondhandClothes">
-              {itemsToGiveBack.secondhandClothes}
-            </label>
-          </div>
-          <br />
-          <div className="step__1-input-container">
-            <input
-              className="step__1-checkbox"
-              type="checkbox"
-              id="clothesToThrowAway"
-              name="clothesToThrowAway"
-              ref={register}
-              defaultChecked={
-                formData.firstStep
-                  ? formData.firstStep.clothesToThrowAway
-                  : false
-              }
-            />
-            <label htmlFor="clothesToThrowAway">
-              {itemsToGiveBack.clothesToThrowAway}
-            </label>
-          </div>
-          <br />
-          <div className="step__1-input-container">
-            <input
-              className="step__1-checkbox"
-              type="checkbox"
-              id="toys"
-              name="toys"
-              ref={register}
-              defaultChecked={
-                formData.firstStep ? formData.firstStep.toys : false
-              }
-            />
-            <label htmlFor="toys">{itemsToGiveBack.toys}</label>
-          </div>
-          <br />
-          <div className="step__1-input-container">
-            <input
-              className="step__1-checkbox"
-              type="checkbox"
-              id="books"
-              name="books"
-              ref={register}
-              defaultChecked={
-                formData.firstStep ? formData.firstStep.books : false
-              }
-            />
-            <label htmlFor="books">{itemsToGiveBack.books}</label>
-          </div>
-          <br />
-          <div className="step__1-input-container">
-            <input
-              className="step__1-checkbox"
-              type="checkbox"
-              id="anotherThings"
-              name="anotherThings"
-              ref={register}
-              defaultChecked={
-                formData.firstStep ? formData.firstStep.anotherThings : false
-              }
-            />
-            <label htmlFor="anotherThings">
-              {itemsToGiveBack.anotherThings}
-            </label>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="step-inputs-wrapper">
+            <div className="step__input-item-container">
+              <input
+                className="step__1-checkbox"
+                type="checkbox"
+                id="secondhandClothes"
+                name="secondhandClothes"
+                ref={register}
+                defaultChecked={
+                  formData.firstStep
+                    ? formData.firstStep.secondhandClothes
+                    : false
+                }
+              />
+              <label htmlFor="secondhandClothes">
+                {itemsToGiveBack.secondhandClothes}
+              </label>
+            </div>
+            <br />
+            <div className="step__input-item-container">
+              <input
+                className="step__1-checkbox"
+                type="checkbox"
+                id="clothesToThrowAway"
+                name="clothesToThrowAway"
+                ref={register}
+                defaultChecked={
+                  formData.firstStep
+                    ? formData.firstStep.clothesToThrowAway
+                    : false
+                }
+              />
+              <label htmlFor="clothesToThrowAway">
+                {itemsToGiveBack.clothesToThrowAway}
+              </label>
+            </div>
+            <br />
+            <div className="step__input-item-container">
+              <input
+                className="step__1-checkbox"
+                type="checkbox"
+                id="toys"
+                name="toys"
+                ref={register}
+                defaultChecked={
+                  formData.firstStep ? formData.firstStep.toys : false
+                }
+              />
+              <label htmlFor="toys">{itemsToGiveBack.toys}</label>
+            </div>
+            <br />
+            <div className="step__input-item-container">
+              <input
+                className="step__1-checkbox"
+                type="checkbox"
+                id="books"
+                name="books"
+                ref={register}
+                defaultChecked={
+                  formData.firstStep ? formData.firstStep.books : false
+                }
+              />
+              <label htmlFor="books">{itemsToGiveBack.books}</label>
+            </div>
+            <br />
+            <div className="step__input-item-container">
+              <input
+                className="step__1-checkbox"
+                type="checkbox"
+                id="anotherThings"
+                name="anotherThings"
+                ref={register}
+                defaultChecked={
+                  formData.firstStep ? formData.firstStep.anotherThings : false
+                }
+              />
+              <label htmlFor="anotherThings">
+                {itemsToGiveBack.anotherThings}
+              </label>
+            </div>
           </div>
           <br />
           {errorFirstStep ? (
@@ -271,39 +273,53 @@ const DonateThings = () => {
               You have to choose at least one item!
             </div>
           ) : null}
-          <button type="submit">Next</button>
+          
+            <button className="btn__step" >
+              Next
+            </button>
+
         </form>
-      </div>
+      </>
     );
   };
   const stepTwo = () => {
     return (
-      <div>
-        Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:
+      <>
+        <h1 className="step__header">Please select number of 60l bags:</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="bags">Liczba 60l worków:</label>
-          <select
-            id="bags"
-            name="bag"
-            defaultValue={formData.secondStep ? formData.secondStep.bag : ""}
-            ref={register}
-          >
-            <option value="" disabled>
-              -- Wybierz --
-            </option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+          <div className="step-inputs-wrapper">
+
+            <label className="number__of__bags" htmlFor="bags">Number of 60l bags:</label>
+            <select
+              id="bags"
+              name="bag"
+              defaultValue={formData.secondStep ? formData.secondStep.bag : ""}
+              ref={register}
+            >
+              <option value="" disabled>
+                -- Choose --
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <br/>
           {errorSecondStep ? (
             <div className="error-message">Please, choose amount of bags!!</div>
           ) : null}
-          <button type="submit">Next</button>
-          <button onClick={() => stepDown()}>wstecz</button>
+          <div className="step__buttons-container">
+            <button className="btn__step" type="submit">
+              Next
+            </button>
+            <button className="btn__step" onClick={() => stepDown()}>
+              Back
+            </button>
+          </div>
         </form>
-      </div>
+      </>
     );
   };
   const stepThree = () => {
