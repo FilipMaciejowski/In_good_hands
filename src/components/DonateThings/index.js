@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { addDonateItemsData } from "../../redux/actions/form-actions";
+import Tshirt from "../../assets/images/Icon.png";
 
 import organizationsTypes from "../../constans/organizationsTypes";
 import HomeContact from "../Home/HomeContact";
@@ -18,7 +19,7 @@ const tillsInitialValue = {
 
 const itemsToGiveBack = {
   secondhandClothes: "Secopnd-hand clothes",
-  clothesToThrowAway: "Clothes to throw away",
+  clothesToThrowAway: "Clothes in good condition",
   toys: "Toys",
   books: "Books",
   anotherThings: "Others"
@@ -618,30 +619,45 @@ const DonateThings = () => {
   const summary = () => {
     const addressData = formData.fourthStep;
     return (
-      <div>
-        <h1>Summary of your donation</h1>
-        <h2>
-          You will donate: {formData.secondStep.bag} bags, {returnData(true)},{" "}
-          {returnData(false)}{" "}
-        </h2>
-        <div>
-          <div>
-            <h2>Pick-up address</h2>
-            Street {addressData.street}
-            Town {addressData.city}
-            Zip code {addressData.zipCode}
-            telephone number {addressData.phone}
+      <>
+        <div className="summary-wraper">
+          <h1 className="step__header">Summary of your donation</h1>
+          <div className="step-inputs-wrapper">
+            <div className="donation__summary-top">
+              <h2>You will donate:</h2>
+              <div className="donation__summary-items">
+                <img className="logoTshirt" src={Tshirt} alt="tshirtLogo"/>
+                {formData.secondStep.bag} bags, {returnData(true)},{" "}
+                {returnData(false)}{" "}
+              </div>
+            </div>
+            <div>
+              <div>
+                <h2>Pick-up address</h2>
+                Street {addressData.street}
+                Town {addressData.city}
+                Zip code {addressData.zipCode}
+                telephone number {addressData.phone}
+              </div>
+              <div>
+                <h2>Pick-up date</h2>
+                Date {addressData.date}
+                Hour {addressData.hours}
+                Comments {addressData.note}
+              </div>
+            </div>
           </div>
-          <div>
-            <h2>Pick-up date</h2>
-            Date {addressData.date}
-            Hour {addressData.hours}
-            Comments {addressData.note}
+          <br />
+          <div className="step__buttons-container">
+            <button className="btn__step" onClick={() => stepDown()}>
+              Back
+            </button>
+            <button className="btn__step" onClick={() => finishStepper()}>
+              Confirm
+            </button>
           </div>
         </div>
-        <button onClick={() => finishStepper()}>Dalej</button>
-        <button onClick={() => stepDown()}>wstecz</button>
-      </div>
+      </>
     );
   };
 

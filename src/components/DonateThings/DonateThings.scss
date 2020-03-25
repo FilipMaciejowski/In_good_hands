@@ -291,6 +291,52 @@
   }
 }
 
+.summary-wraper{
+  height: 100%;
+  width: 100%;
+  border: 1px solid red; 
+  .step-inputs-wrapper {
+        height: 60%;
+        border: 1px solid green;
+        .donation__summary-top{
+          border: 1px solid grey; 
+          h2{
+            color: $main-grey-dark;
+            font-family: $font-base;
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+          }
+          .donation__summary-items{
+            display: flex;
+            align-items: center;
+            
+            img.logoTshirt {
+              width: 3rem;
+              height: 3rem;
+            }
+          }
+        }
+}
+.step__buttons-container{
+  border: 1px solid tomato;
+        width: 20rem;
+        display: flex;
+        justify-content: space-between;
+        .btn__step{
+          height: auto;
+        width: fit-content;
+        border: 1px solid $main-grey-dark;
+        color:$main-grey-dark;
+        font-family: $font-base;
+        padding: 1rem 3rem;
+        background-color: #00000000;
+        outline: none;
+        cursor: pointer;
+        }
+}
+}
+
 .till {
   padding: 0.75rem 1rem;
   border: 1px solid $main-grey-dark;
