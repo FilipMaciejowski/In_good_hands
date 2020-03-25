@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { addDonateItemsData } from "../../redux/actions/form-actions";
+
 import organizationsTypes from "../../constans/organizationsTypes";
 import HomeContact from "../Home/HomeContact";
 import DonateThingsHeader from "./DonateThingsHeader";
@@ -269,15 +270,12 @@ const DonateThings = () => {
           </div>
           <br />
           {errorFirstStep ? (
-            <div className="step__1-error-message">
+            <div className="error-message">
               You have to choose at least one item!
             </div>
           ) : null}
-          
-            <button className="btn__step" >
-              Next
-            </button>
 
+          <button className="btn__step">Next</button>
         </form>
       </>
     );
@@ -287,26 +285,32 @@ const DonateThings = () => {
       <>
         <h1 className="step__header">Please select number of 60l bags:</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="step-inputs-wrapper">
+          <div className="step-inputs-wrapper-select">
+            <label className="number__of__bags" htmlFor="bags">
+              Number of 60l bags:
+            </label>
 
-            <label className="number__of__bags" htmlFor="bags">Number of 60l bags:</label>
-            <select
-              id="bags"
-              name="bag"
-              defaultValue={formData.secondStep ? formData.secondStep.bag : ""}
-              ref={register}
-            >
-              <option value="" disabled>
-                -- Choose --
-              </option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
+            {
+              <select
+                id="bags"
+                name="bag"
+                defaultValue={
+                  formData.secondStep ? formData.secondStep.bag : ""
+                }
+                ref={register}
+              >
+                <option value="0" disabled>
+                  -- Choose --
+                </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            }
           </div>
-          <br/>
+          <br />
           {errorSecondStep ? (
             <div className="error-message">Please, choose amount of bags!!</div>
           ) : null}
@@ -324,105 +328,122 @@ const DonateThings = () => {
   };
   const stepThree = () => {
     return (
-      <div>
+      <>
+        <h1 className="step__header">Location:</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div>
-            <label htmlFor="localization">Lokalizacja:</label>
-            <select
-              id="localization"
-              name="localization"
-              defaultValue={
-                formData.thirdStep ? formData.thirdStep.localization : ""
-              }
-              ref={register}
-            >
-              <option value="" disabled>
-                -- Choose --
-              </option>
-              <option value="poznan">Bergen</option>
-              <option value="warszawa">Kristiansand</option>
-              <option value="krakow">Oslo</option>
-              <option value="wroclaw">Stavanger</option>
-              <option value="katowice">Trondheim</option>
-            </select>
-            {errorThirdStepLocalization ? (
-              <div className="error-message">Please, choose location</div>
-            ) : null}
-          </div>
-          <div>
-            <div
-              className={`till ${tillsValue.children ? "help__active" : ""}`}
-              onClick={() => changeTillValue("children")}
-            >
-              {people.children}
+          <div className="step__3__step-inputs-wrapper">
+            <div className="step__3__input-item-container">
+              <label htmlFor="localization"></label>
+              <select
+                id="localization"
+                name="localization"
+                defaultValue={
+                  formData.thirdStep ? formData.thirdStep.localization : ""
+                }
+                ref={register}
+              >
+                <option value="" disabled>
+                  - Choose -
+                </option>
+                <option value="poznan">Bergen</option>
+                <option value="warszawa">Kristiansand</option>
+                <option value="krakow">Oslo</option>
+                <option value="wroclaw">Stavanger</option>
+                <option value="katowice">Trondheim</option>
+              </select>
+              {errorThirdStepLocalization ? (
+                <div className="error-message">Please, choose location</div>
+              ) : null}
             </div>
-            <div
-              className={`till ${tillsValue.mothers ? "help__active" : ""}`}
-              onClick={() => changeTillValue("mothers")}
-            >
-              {people.mothers}
-            </div>
-            <div
-              className={`till ${tillsValue.homeless ? "help__active" : ""}`}
-              onClick={() => changeTillValue("homeless")}
-            >
-              {people.homeless}
-            </div>
-            <div
-              className={`till ${tillsValue.disabledPeople ? "help__active" : ""}`}
-              onClick={() => changeTillValue("disabledPeople")}
-            >
-              {people.disabledPeople}
-            </div>
-            <div
-              className={`till ${tillsValue.oldPeople ? "help__active" : ""}`}
-              onClick={() => changeTillValue("oldPeople")}
-            >
-              {people.oldPeople}
-            </div>
-            {errorThirdStepTarget ? (
-              <div className="error-message">
-                Wybierz przynajmniej jedną opcje
+            <div className="step__3__input-item-container">
+              <div
+                className={`till ${tillsValue.children ? "help__active" : ""}`}
+                onClick={() => changeTillValue("children")}
+              >
+                {people.children}
               </div>
-            ) : null}
-          </div>
-          <div>
-            <input
-              type="text"
-              id="organization"
-              name="organization"
-              ref={register}
-              defaultValue={
-                formData.thirdStep ? formData.thirdStep.organization : ""
-              }
-            />
-            <label htmlFor="organization">
-              Wpisz nazwę konkretnej organizacji
-            </label>
-            <label htmlFor="typeOfOrganization">Liczba 60l worków:</label>
-            <select
-              id="typeOfOrganization"
-              name="typeOfOrganization"
-              defaultValue={
-                formData.thirdStep ? formData.thirdStep.typeOfOrganization : ""
-              }
-              ref={register}
-            >
-              <option value="" disabled>
-                -- Wybierz --
-              </option>
-              {setOptions()}
-            </select>
-            {errorThirdStepOrganization ? (
-              <div className="error-message">
-                Nazwa organizacji oraz jej typ jest wymagana !
+              <div
+                className={`till ${tillsValue.mothers ? "help__active" : ""}`}
+                onClick={() => changeTillValue("mothers")}
+              >
+                {people.mothers}
               </div>
-            ) : null}
+              <div
+                className={`till ${tillsValue.homeless ? "help__active" : ""}`}
+                onClick={() => changeTillValue("homeless")}
+              >
+                {people.homeless}
+              </div>
+              <div
+                className={`till ${
+                  tillsValue.disabledPeople ? "help__active" : ""
+                }`}
+                onClick={() => changeTillValue("disabledPeople")}
+              >
+                {people.disabledPeople}
+              </div>
+              <div
+                className={`till ${tillsValue.oldPeople ? "help__active" : ""}`}
+                onClick={() => changeTillValue("oldPeople")}
+              >
+                {people.oldPeople}
+              </div>
+              {errorThirdStepTarget ? (
+                <div className="error-message">Choose at least one option</div>
+              ) : null}
+            </div>
+            <div className="name__organisation">
+              <div className="step__3__input-item-container">
+                <label htmlFor="organization">Name of organisation</label>
+                <input
+                  type="text"
+                  id="organization"
+                  name="organization"
+                  ref={register}
+                  defaultValue={
+                    formData.thirdStep ? formData.thirdStep.organization : ""
+                  }
+                />
+              </div>
+              <div className="step__3__select-item-container">
+                <label htmlFor="typeOfOrganization">
+                  Type of organisation:
+                </label>
+                <select
+                  id="typeOfOrganization"
+                  name="typeOfOrganization"
+                  defaultValue={
+                    formData.thirdStep
+                      ? formData.thirdStep.typeOfOrganization
+                      : ""
+                  }
+                  ref={register}
+                >
+                  <option value="" disabled>
+                    - Choose -
+                  </option>
+                  {setOptions()}
+                </select>
+              </div>
+            </div>
           </div>
-          <button type="submit">Dalej</button>
-          <button onClick={() => stepDown()}>wstecz</button>
+          <br />
+          {errorThirdStepOrganization ? (
+            <div className="error-message">
+              Enter name and type of an organisation!
+            </div>
+          ) : null}
+
+          <div className="step__buttons-container">
+            <button className="btn__step" type="submit">
+              Next
+            </button>
+            <button className="btn__step" onClick={() => stepDown()}>
+              Back
+            </button>
+          </div>
         </form>
-      </div>
+      </>
     );
   };
   const stepFour = () => {
@@ -654,8 +675,8 @@ const DonateThings = () => {
       return (
         <div className="step__info-content">
           <div className="step__info-content-banner">
-              <h1>Remember!</h1>
-              <p>Pack all of your items in 60l plastic bags.</p>
+            <h1>Remember!</h1>
+            <p>Pack all of your items in 60l plastic bags.</p>
           </div>
         </div>
       );
@@ -663,13 +684,11 @@ const DonateThings = () => {
       return (
         <div className="step__info-content">
           <div className="step__info-content-banner">
-          
-              <h1>Remember!</h1>
-              <p>
-                Fill in all info regardig who you would like to help and name of
-                an organisation, foundation or company.
-              </p>
-           
+            <h1>Remember!</h1>
+            <p>
+              Fill in all info regardig who you would like to help and name of
+              an organisation, foundation or company.
+            </p>
           </div>
         </div>
       );
@@ -677,12 +696,8 @@ const DonateThings = () => {
       return (
         <div className="step__info-content">
           <div className="step__info-content-banner">
-           
-              <h1>Remember!</h1>
-              <p>
-                Fill in an address and a place where items will be picked up.
-              </p>
-          
+            <h1>Remember!</h1>
+            <p>Fill in an address and a place where items will be picked up.</p>
           </div>
         </div>
       );

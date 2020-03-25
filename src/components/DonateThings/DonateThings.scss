@@ -80,6 +80,7 @@
     h1.step__header {
       border: 1px solid violet;
       font-family: $font-base;
+      font-size: 1.5rem;
       color: $main-grey-dark;
       margin: 2rem 0 2rem 0;
     }
@@ -109,7 +110,7 @@
             height: 2rem;
             border: 2px solid $main-grey;
             cursor: pointer;
-            transition: 0.1s linear;
+            transition: 0.2s linear;
             &:checked {
               background-color: $main-yellow;
             }
@@ -117,8 +118,12 @@
         }
       }
 
+      .step-inputs-wrapper-select{
+        @extend .step-inputs-wrapper;
+      }
+
       .error-message {
-        margin-top: 1rem;
+        margin-bottom: 1rem;
         font-family: $font-base;
         color: red;
       }
@@ -141,6 +146,67 @@
     .number__of__bags{
       margin-right: 2.5rem;
     }
+    
+    .step__3__step-inputs-wrapper{
+      @extend .step-inputs-wrapper;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+    .step__3__input-item-container:nth-of-type(2){
+      border: 1px solid lightblue;
+      width: 40%;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .name__organisation{
+      width: 50%;
+      border: 1px solid lightgreen;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .step__3__input-item-container, .step__3__select-item-container{
+        
+        label{
+          margin-right: 1rem;
+        }
+      }
+
+      .step__3__input-item-container input {
+            width: 50%;
+            background-color: #00000000;
+            border: 1px solid $main-grey;;
+            outline: none;
+            font-family: $font-base;
+            height: 1.5rem;
+            margin: 1.5rem 0;
+          }
+          
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            border: none;
+
+            &:active {
+              border: none;
+            }
+
+            &::placeholder {
+              padding: 1rem;
+              border-bottom: 2px solid $main-grey;
+            }
+
+            &:placeholder-shown {
+              border: none;
+            }
+            &:placeholder-shown:active {
+              border: none;
+            }
+          }
+      
+    }
+  }
   }
 }
 
@@ -150,6 +216,7 @@
   width: fit-content;
   margin: 0.75rem;
   cursor: pointer;
+  transition: 0.2s linear;
 }
 
 .help__active {
