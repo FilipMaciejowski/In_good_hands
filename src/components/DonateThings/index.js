@@ -17,19 +17,19 @@ const tillsInitialValue = {
 };
 
 const itemsToGiveBack = {
-  secondhandClothes: "Ubrania które nadają się do ponownego użycia",
-  clothesToThrowAway: "Ubrania, do wyrzucenia",
-  toys: "Zabawki",
-  books: "Książki",
-  anotherThings: "inne"
+  secondhandClothes: "Secopnd-hand clothes",
+  clothesToThrowAway: "Clothes to throw away",
+  toys: "Toys",
+  books: "Books",
+  anotherThings: "Others"
 };
 
 const people = {
-  children: "dzieciom",
-  mothers: "samotnym matkom",
-  homeless: "bezdomnym",
-  disabledPeople: "niepełnosprawnym",
-  oldPeople: "osobom starszym"
+  children: "Children",
+  mothers: "Single mothers",
+  homeless: "Homeless people",
+  disabledPeople: "Disable people",
+  oldPeople: "Old people"
 };
 
 const DonateThings = () => {
@@ -394,7 +394,7 @@ const DonateThings = () => {
             </div>
             <div className="name__organisation">
               <div className="step__3__input-item-container">
-                <label htmlFor="organization">Name of organisation</label>
+                <label htmlFor="organization">Name of an organisation</label>
                 <input
                   type="text"
                   id="organization"
@@ -453,6 +453,7 @@ const DonateThings = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="step__4__step-inputs-wrapper">
             <div className="column__content">
+              <h1 className="step__4__column-header">Pick-up address:</h1>
               <div className="step__4__input-item-container">
                 <label htmlFor="street">Street</label>
                 <input
@@ -490,7 +491,7 @@ const DonateThings = () => {
                 />
               </div>
               <div className="step__4__input-item-container">
-                <label htmlFor="phone">Telephone<br/> number</label>
+                <label htmlFor="phone">Telephone<br/>number</label>
                 <input
                   type="text"
                   id="phone"
@@ -504,6 +505,7 @@ const DonateThings = () => {
             </div>
 
             <div className="column__content">
+              <h1 className="step__4__column-header">Pick-up date:</h1>
               <div className="step__4__input-item-container">
                 <label htmlFor="date">Data</label>
                 <input
@@ -529,7 +531,7 @@ const DonateThings = () => {
                 />
               </div>
               <div className="step__4__input-item-container">
-                <label htmlFor="note">Comments for<br/> delivery man</label>
+                <label htmlFor="note">Comments</label>
                 <textarea
                   id="note"
                   name="note"
@@ -617,24 +619,24 @@ const DonateThings = () => {
     const addressData = formData.fourthStep;
     return (
       <div>
-        <h1>Podsumowanie Twojej darowizny</h1>
+        <h1>Summary of your donation</h1>
         <h2>
-          Oddajesz: {formData.secondStep.bag} worki, {returnData(true)},{" "}
+          You will donate: {formData.secondStep.bag} bags, {returnData(true)},{" "}
           {returnData(false)}{" "}
         </h2>
         <div>
           <div>
-            <h2>Adres odbioru</h2>
-            Ulica {addressData.street}
-            Miasto {addressData.city}
-            Kod pocztowy {addressData.zipCode}
-            Numer telefonu {addressData.phone}
+            <h2>Pick-up address</h2>
+            Street {addressData.street}
+            Town {addressData.city}
+            Zip code {addressData.zipCode}
+            telephone number {addressData.phone}
           </div>
           <div>
-            <h2>Termin odbioru</h2>
-            Data {addressData.date}
-            Godzina {addressData.hours}
-            Uwagi dla kuriera {addressData.note}
+            <h2>Pick-up date</h2>
+            Date {addressData.date}
+            Hour {addressData.hours}
+            Comments {addressData.note}
           </div>
         </div>
         <button onClick={() => finishStepper()}>Dalej</button>
@@ -652,15 +654,15 @@ const DonateThings = () => {
 
   const returnCurrentStep = () => {
     if (step === 1) {
-     /*  return stepOne();
+      return stepOne();
     } else if (step === 2) {
       return stepTwo();
-    } else if (step === 3) { */
+    } else if (step === 3) {
       return stepThree();
- /*  } else if (step === 4) {
+  } else if (step === 4) {
       return stepFour();
     } else if (step === 5) {
-      return summary(); */
+      return summary();
     }
   };
 
@@ -670,7 +672,7 @@ const DonateThings = () => {
         <div className="step__info-content">
           <div className="step__info-content-banner">
             <h1>Remember!</h1>
-            <p>Fill in all details regarding items you would like to donate.</p>
+            <p>Fill out all details regarding items you would like to donate.</p>
           </div>
         </div>
       );

@@ -138,6 +138,8 @@
         height: auto;
         width: fit-content;
         border: 1px solid $main-grey-dark;
+        color:$main-grey-dark;
+        font-family: $font-base;
         padding: 1rem 3rem;
         background-color: #00000000;
         outline: none;
@@ -196,13 +198,16 @@
             &::placeholder {
               padding: 1rem;
               border-bottom: 2px solid $main-grey;
+              background-color: #00000000;
             }
 
             &:placeholder-shown {
               border: none;
+              background-color: #00000000;
             }
             &:placeholder-shown:active {
               border: none;
+              background-color: #00000000;
             }
           }
       
@@ -224,10 +229,20 @@
         justify-content: space-between;
         height: 60%;
         margin-right: 1rem;
+        .step__4__column-header{
+          font-family: $font-base;
+          color: $main-grey-dark;
+          font-size: 1.25rem;
+          font-weight: bold;
+        }
         .step__4__input-item-container{
           display: flex;
           justify-content: space-between;
           align-items: center;
+          label{
+            font-family: $font-base;
+            color: $main-grey-dark;
+          }
          
           input {
             height: auto;
