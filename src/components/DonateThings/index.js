@@ -22,7 +22,7 @@ const itemsToGiveBack = {
   clothesToThrowAway: "Clothes in good condition",
   toys: "Toys",
   books: "Books",
-  anotherThings: "Others"
+  anotherThings: "Other things"
 };
 
 const people = {
@@ -576,7 +576,7 @@ const DonateThings = () => {
     Object.keys(formDataStep).forEach(key => {
       if (formDataStep[key]) {
         if (stringToReturn.length) {
-          stringToReturn += " ," + dataList[key];
+          stringToReturn += ", " + dataList[key];
         } else {
           stringToReturn += dataList[key];
         }
@@ -626,24 +626,35 @@ const DonateThings = () => {
             <div className="donation__summary-top">
               <h2>You will donate:</h2>
               <div className="donation__summary-items">
-                <img className="logoTshirt" src={Tshirt} alt="tshirtLogo"/>
-                {formData.secondStep.bag} bags, {returnData(true)},{" "}
+                <img className="logoTshirt" src={Tshirt} alt="tshirtLogo" />
+                {formData.secondStep.bag} Bags, {returnData(true)},{" "}
                 {returnData(false)}{" "}
               </div>
             </div>
-            <div>
-              <div>
-                <h2>Pick-up address</h2>
-                Street {addressData.street}
-                Town {addressData.city}
-                Zip code {addressData.zipCode}
-                telephone number {addressData.phone}
+            <div className="donation__summary-main">
+              <div className="donation__summary-item">
+                <h2 className="donation__summary-main-header">
+                  Pick-up address
+                </h2>
+                
+                  <span>Street</span> <span>{addressData.street}</span>
+                  <span>Town</span>
+                  <span>{addressData.city}</span>
+                  <span>Zip code</span>
+                  <span>{addressData.zipCode}</span>
+                  <span>Telephone number</span>
+                  <span>{addressData.phone}</span>
+           
               </div>
-              <div>
-                <h2>Pick-up date</h2>
-                Date {addressData.date}
-                Hour {addressData.hours}
-                Comments {addressData.note}
+              <div className="donation__summary-item">
+                <h2 className="donation__summary-main-header">Pick-up date</h2>
+               
+                  <span>Date</span>
+                  <span>{addressData.date}</span>
+                  <span>Hour</span> <span>{addressData.hours}</span>
+                  <span>Comments</span>
+                  <span>{addressData.note}</span>
+                
               </div>
             </div>
           </div>

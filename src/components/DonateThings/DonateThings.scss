@@ -251,6 +251,7 @@
             outline: none;
             font-family: $font-base;
             height: 1.5rem;
+            color: $main-grey-dark;
     
           }
           
@@ -296,8 +297,12 @@
   width: 100%;
   border: 1px solid red; 
   .step-inputs-wrapper {
-        height: 60%;
+        height: 65%;
         border: 1px solid green;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
         .donation__summary-top{
           border: 1px solid grey; 
           h2{
@@ -310,13 +315,39 @@
           .donation__summary-items{
             display: flex;
             align-items: center;
+           
             
             img.logoTshirt {
+              position:relative;
               width: 3rem;
               height: 3rem;
+              top:0;
+              left: -3px;
             }
           }
         }
+        .donation__summary-main{
+          display: flex;
+          max-width: 60%;
+          .donation__summary-item{
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-right: 1.5rem;
+            span{
+              margin-right: .5rem
+            }
+
+          .donation__summary-main-header{
+          color: $main-grey-dark;
+            font-family: $font-base;
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+          }
+        }
+      }
 }
 .step__buttons-container{
   border: 1px solid tomato;
