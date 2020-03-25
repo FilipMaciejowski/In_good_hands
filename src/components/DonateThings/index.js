@@ -660,10 +660,10 @@ const DonateThings = () => {
           </div>
           <br />
           <div className="step__buttons-container">
-            <button className="btn__step" onClick={() => stepDown()}>
+            <button className="sum__btn__step" onClick={() => stepDown()}>
               Back
             </button>
-            <button className="btn__step" onClick={() => finishStepper()}>
+            <button className="sum__btn__step" onClick={() => finishStepper()}>
               Confirm
             </button>
           </div>
@@ -696,40 +696,52 @@ const DonateThings = () => {
   const returnMyDiv = () => {
     if (step === 1) {
       return (
-        <div className="step__info-content">
-          <div className="step__info-content-banner">
-            <h1>Remember!</h1>
-            <p>Fill out all details regarding items you would like to donate.</p>
+        <div className="step__info">
+          <div className="step__info-content">
+            <div className="step__info-content-banner">
+              <h1>Remember!</h1>
+              <p>
+                Fill out all details regarding items you would like to donate.
+              </p>
+            </div>
           </div>
         </div>
       );
     } else if (step === 2) {
       return (
-        <div className="step__info-content">
-          <div className="step__info-content-banner">
-            <h1>Remember!</h1>
-            <p>Pack all of your items in 60l plastic bags.</p>
+        <div className="step__info">
+          <div className="step__info-content">
+            <div className="step__info-content-banner">
+              <h1>Remember!</h1>
+              <p>Pack all of your items in 60l plastic bags.</p>
+            </div>
           </div>
         </div>
       );
     } else if (step === 3) {
       return (
-        <div className="step__info-content">
-          <div className="step__info-content-banner">
-            <h1>Remember!</h1>
-            <p>
-              Fill in all info regardig who you would like to help and name of
-              an organisation, foundation or company.
-            </p>
+        <div className="step__info">
+          <div className="step__info-content">
+            <div className="step__info-content-banner">
+              <h1>Remember!</h1>
+              <p>
+                Fill in all info regardig who you would like to help and name of
+                an organisation, foundation or company.
+              </p>
+            </div>
           </div>
         </div>
       );
     } else if (step === 4) {
       return (
-        <div className="step__info-content">
-          <div className="step__info-content-banner">
-            <h1>Remember!</h1>
-            <p>Fill in an address and a place where items will be picked up.</p>
+        <div className="step__info">
+          <div className="step__info-content">
+            <div className="step__info-content-banner">
+              <h1>Remember!</h1>
+              <p>
+                Fill in an address and a place where items will be picked up.
+              </p>
+            </div>
           </div>
         </div>
       );
@@ -750,7 +762,7 @@ const DonateThings = () => {
               <div>Connection with database lost.</div>
             ) : (
               <div className="stepper-container">
-                <div className="step__info">{returnMyDiv()}</div>
+                {returnMyDiv()}
                 <div className="stepper__main-container">
                   <div className="steps__container">
                     {step < 5 ? <p>Step {step}/4</p> : null}
