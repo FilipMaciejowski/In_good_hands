@@ -334,7 +334,7 @@ const DonateThings = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="step__3__step-inputs-wrapper">
             <div className="step__3__input-item-container">
-              <label htmlFor="localization"></label>
+              <label htmlFor="location"></label>
               <select
                 id="localization"
                 name="localization"
@@ -390,7 +390,7 @@ const DonateThings = () => {
                 {people.oldPeople}
               </div>
               {errorThirdStepTarget ? (
-                <div className="error-message">Choose at least one option</div>
+                <div className="error-message-steps">Choose at least one option</div>
               ) : null}
             </div>
             <div className="name__organisation">
@@ -406,7 +406,7 @@ const DonateThings = () => {
                   }
                 />
               </div>
-              <div className="step__3__select-item-container">
+              <div className="step__3__input-item-container">
                 <label htmlFor="typeOfOrganization">
                   Type of organisation:
                 </label>

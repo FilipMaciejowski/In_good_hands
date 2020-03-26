@@ -15,7 +15,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
 
     .step__info-content-banner {
       height: 50%;
@@ -63,10 +62,9 @@
   left: 0;
   top: -4px;
 
-
   .steps__container {
     width: 90%;
-    border: 1px solid orange;
+
     margin-top: 1.5rem;
     font-size: 1.25rem;
     color: $main-grey-dark;
@@ -75,7 +73,7 @@
   .stepper {
     width: 90%;
     height: 65%;
-    border: 1px solid blue;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -90,10 +88,10 @@
     form {
       height: 100%;
       width: 100%;
-      border: 1px solid red;
+
       .step-inputs-wrapper {
         height: 75%;
-        border: 1px solid green;
+
         .step__input-item-container {
           display: flex;
           align-items: center;
@@ -128,10 +126,8 @@
       .error-message {
         margin-bottom: 1rem;
         font-family: $font-base;
-        color: red;
       }
       .step__buttons-container {
-        border: 1px solid tomato;
         width: 17.5rem;
         display: flex;
         justify-content: space-between;
@@ -159,33 +155,47 @@
       justify-content: space-between;
 
       .step__3__input-item-container:nth-of-type(2) {
-        border: 1px solid lightblue;
         width: 40%;
         height: auto;
         display: flex;
         flex-wrap: wrap;
+
+        .till {
+          padding: 0.75rem 1rem;
+          border: 1px solid $main-grey-dark;
+          width: fit-content;
+          margin: 0 0.35rem 0.35rem 0;
+          cursor: pointer;
+          transition: 0.2s linear;
+        }
+
+        .help__active {
+          background-color: $main-yellow;
+        }
       }
       .name__organisation {
-        width: 40rem;
-        border: 1px solid lightgreen;
+        width: 45rem;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        .step__3__input-item-container,
-        .step__3__select-item-container {
-          label {
-            margin-right: 1rem;
-          }
+        align-items: flex-start;
+        
+
+        .step__3__input-item-container {
+          
+          display: flex;
+          flex-direction: column;
+          width: 50%;
         }
+      
 
         .step__3__input-item-container input {
           width: 50%;
+          margin-top: 1rem;
           background-color: #00000000;
           border: 1px solid $main-grey;
           outline: none;
           font-family: $font-base;
           height: 1.5rem;
-          margin: 1.5rem 0;
         }
 
         input:-webkit-autofill,
@@ -212,6 +222,11 @@
             background-color: #00000000;
           }
         }
+        .step__3__input-item-container select {
+          width: 50%;
+          margin-top: 1rem;
+        }
+        
       }
     }
   }
@@ -224,7 +239,7 @@
   justify-content: space-between;
   .column__content {
     width: 18.5rem;
-    border: 1px solid brown;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -293,11 +308,11 @@
 .summary-wraper {
   height: 100%;
   width: 100%;
-  border: 1px solid red;
+
   .step-inputs-wrapper {
     width: 75%;
     height: 65%;
-    border: 1px solid green;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -319,7 +334,7 @@
           height: 2.5rem;
           top: 0;
           left: -3px;
-          margin-right: .5rem;
+          margin-right: 0.5rem;
         }
       }
     }
@@ -327,14 +342,13 @@
       display: flex;
       align-items: flex-start;
       width: 100%;
-      border: 1px solid rgb(184, 135, 3);
-      .summary__list-wrapper{
-        border: 1px solid royalblue;
-        display: flex; 
+
+      .summary__list-wrapper {
+        display: flex;
         flex-direction: column;
         justify-content: flex-start;
-      
-      .donation__summary-list-header {
+
+        .donation__summary-list-header {
           color: $main-grey-dark;
           font-family: $font-base;
           font-size: 1.25rem;
@@ -342,39 +356,33 @@
           margin-bottom: 1rem;
         }
 
-      ul.donation__summary-list {
-        width: auto;
-        border:1px solid blueviolet;
-        /* display: flex;
-        flex-direction: column;
-        justify-content: space-between; */
-        margin-right: 1.5rem;
-        span:nth-child(1) {
-          color: $main-grey-dark;
-          font-family: $font-base;
-          margin-right: 6rem;
-        }
+        ul.donation__summary-list {
+          width: auto;
 
-        
-
-        li.donation__summary-list-item {
-          display: flex;
-          align-items: center;
-          span{
+          margin-right: 1.5rem;
+          span:nth-child(1) {
             color: $main-grey-dark;
-          font-family: $font-base;
-            margin-bottom: 1rem;
+            font-family: $font-base;
+            margin-right: 6rem;
           }
-          span:nth-of-type(1) {
-            margin-right: 0.5rem;
+
+          li.donation__summary-list-item {
+            display: flex;
+            align-items: center;
+            span {
+              color: $main-grey-dark;
+              font-family: $font-base;
+              margin-bottom: 1rem;
+            }
+            span:nth-of-type(1) {
+              margin-right: 0.5rem;
+            }
           }
         }
       }
     }
-    }
   }
   .step__buttons-container {
-    border: 1px solid tomato;
     width: 17.5rem;
     display: flex;
     justify-content: space-between;
@@ -392,15 +400,8 @@
   }
 }
 
-.till {
-  padding: 0.75rem 1rem;
-  border: 1px solid $main-grey-dark;
-  width: fit-content;
-  margin: 0.75rem;
-  cursor: pointer;
-  transition: 0.2s linear;
-}
-
-.help__active {
-  background-color: $main-yellow;
+.error-message-steps {
+  color: red;
+  font-family: $font-base;
+  font-size: 0.75rem;
 }
