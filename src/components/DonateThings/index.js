@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { addDonateItemsData } from "../../redux/actions/form-actions";
+
 import Tshirt from "../../assets/images/Icon.png";
 
 import organizationsTypes from "../../constans/organizationsTypes";
@@ -58,10 +59,11 @@ const DonateThings = () => {
   const stepUp = () => {
     setStep(step + 1);
   };
-  const stepDown = () => {
+  const stepDown = (event) => {
     setStep(step - 1);
+    event.preventDefault();
   };
-
+  
   const onSubmit = data => {
     if (step === 1 && validateFirstStep(data)) {
       firstStepSubmit(data);
@@ -290,36 +292,33 @@ const DonateThings = () => {
             <label className="number__of__bags" htmlFor="bags">
               Number of 60l bags:
             </label>
-
-            {
-              <select
-                id="bags"
-                name="bag"
-                defaultValue={
-                  formData.secondStep ? formData.secondStep.bag : ""
-                }
-                ref={register}
-              >
-                <option value="0" disabled>
-                  -- Choose --
-                </option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-            }
+            <select
+              id="bags"
+              name="bag"
+              defaultValue={formData.secondStep ? formData.secondStep.bag : ""}
+              ref={register}
+            >
+              <option value="0" disabled>
+                -- Choose --
+              </option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
           </div>
           <br />
           {errorSecondStep ? (
-            <div className="error-message-steps">Please, choose amount of bags!!</div>
+            <div className="error-message-steps">
+              Please, choose amount of bags!!
+            </div>
           ) : null}
           <div className="step__buttons-container">
             <button className="btn__step" type="submit">
               Next
             </button>
-            <button className="btn__step" onClick={() => stepDown()}>
+            <button className="btn__step" onClick={(e) => stepDown(e)}>
               Back
             </button>
           </div>
@@ -353,7 +352,9 @@ const DonateThings = () => {
                 <option value="katowice">Trondheim</option>
               </select>
               {errorThirdStepLocalization ? (
-                <div className="error-message-steps">Please, choose location</div>
+                <div className="error-message-steps">
+                  Please, choose location
+                </div>
               ) : null}
             </div>
             <div className="step__3__input-item-container">
@@ -390,7 +391,9 @@ const DonateThings = () => {
                 {people.oldPeople}
               </div>
               {errorThirdStepTarget ? (
-                <div className="error-message-steps">Choose at least one option</div>
+                <div className="error-message-steps">
+                  Choose at least one option
+                </div>
               ) : null}
             </div>
             <div className="name__organisation">
@@ -439,7 +442,7 @@ const DonateThings = () => {
             <button className="btn__step" type="submit">
               Next
             </button>
-            <button className="btn__step" onClick={() => stepDown()}>
+            <button className="btn__step" onClick={(e) => stepDown(e)}>
               Back
             </button>
           </div>
@@ -492,7 +495,11 @@ const DonateThings = () => {
                 />
               </div>
               <div className="step__4__input-item-container">
-                <label htmlFor="phone">Telephone<br/>number</label>
+                <label htmlFor="phone">
+                  Telephone
+                  <br />
+                  number
+                </label>
                 <input
                   type="text"
                   id="phone"
@@ -553,12 +560,12 @@ const DonateThings = () => {
             <button className="btn__step" type="submit">
               Next
             </button>
-            <button className="btn__step" onClick={() => stepDown()}>
+            <button className="btn__step" onClick={(e) => stepDown(e)}>
               Back
             </button>
           </div>
         </form>
-      </>
+      </> 
     );
   };
 
@@ -682,7 +689,7 @@ const DonateThings = () => {
           </div>
           <br />
           <div className="step__buttons-container">
-            <button className="sum__btn__step" onClick={() => stepDown()}>
+            <button className="sum__btn__step" onClick={(e) => stepDown(e)}>
               Back
             </button>
             <button className="sum__btn__step" onClick={() => finishStepper()}>
@@ -708,7 +715,7 @@ const DonateThings = () => {
       return stepTwo();
     } else if (step === 3) {
       return stepThree();
-  } else if (step === 4) {
+    } else if (step === 4) {
       return stepFour();
     } else if (step === 5) {
       return summary();
@@ -719,51 +726,43 @@ const DonateThings = () => {
     if (step === 1) {
       return (
         <div className="step__info">
-            <div className="step__info-content-banner">
-              <h1>Remember!</h1>
-              <p>
-                Fill out all details regarding items you would like to donate.
-              </p>
+          <div className="step__info-content-banner">
+            <h1>Remember!</h1>
+            <p>
+              Fill out all details regarding items you would like to donate.
+            </p>
           </div>
         </div>
       );
     } else if (step === 2) {
       return (
         <div className="step__info">
-          
-            <div className="step__info-content-banner">
-              <h1>Remember!</h1>
-              <p>Pack all of your items in 60l plastic bags.</p>
-            </div>
+          <div className="step__info-content-banner">
+            <h1>Remember!</h1>
+            <p>Pack all of your items in 60l plastic bags.</p>
           </div>
-        
+        </div>
       );
     } else if (step === 3) {
       return (
         <div className="step__info">
-        
-            <div className="step__info-content-banner">
-              <h1>Remember!</h1>
-              <p>
-                Fill in all info regardig who you would like to help and name of
-                an organisation, foundation or company.
-              </p>
-            </div>
+          <div className="step__info-content-banner">
+            <h1>Remember!</h1>
+            <p>
+              Fill in all info regardig who you would like to help and name of
+              an organisation, foundation or company.
+            </p>
           </div>
-        
+        </div>
       );
     } else if (step === 4) {
       return (
         <div className="step__info">
-          
-            <div className="step__info-content-banner">
-              <h1>Remember!</h1>
-              <p>
-                Fill in an address and a place where items will be picked up.
-              </p>
-            </div>
+          <div className="step__info-content-banner">
+            <h1>Remember!</h1>
+            <p>Fill in an address and a place where items will be picked up.</p>
           </div>
-        
+        </div>
       );
     } else {
       return null;
