@@ -730,18 +730,18 @@ const DonateThings = () => {
     } else if (step === 2) {
       return (
         <div className="step__info">
-          <div className="step__info-content">
+          
             <div className="step__info-content-banner">
               <h1>Remember!</h1>
               <p>Pack all of your items in 60l plastic bags.</p>
             </div>
           </div>
-        </div>
+        
       );
     } else if (step === 3) {
       return (
         <div className="step__info">
-          <div className="step__info-content">
+        
             <div className="step__info-content-banner">
               <h1>Remember!</h1>
               <p>
@@ -750,12 +750,12 @@ const DonateThings = () => {
               </p>
             </div>
           </div>
-        </div>
+        
       );
     } else if (step === 4) {
       return (
         <div className="step__info">
-          <div className="step__info-content">
+          
             <div className="step__info-content-banner">
               <h1>Remember!</h1>
               <p>
@@ -763,7 +763,7 @@ const DonateThings = () => {
               </p>
             </div>
           </div>
-        </div>
+        
       );
     } else {
       return null;
