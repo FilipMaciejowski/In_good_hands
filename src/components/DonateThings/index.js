@@ -271,7 +271,7 @@ const DonateThings = () => {
           </div>
           <br />
           {errorFirstStep ? (
-            <div className="error-message">
+            <div className="error-message-steps">
               You have to choose at least one item!
             </div>
           ) : null}
@@ -313,7 +313,7 @@ const DonateThings = () => {
           </div>
           <br />
           {errorSecondStep ? (
-            <div className="error-message">Please, choose amount of bags!!</div>
+            <div className="error-message-steps">Please, choose amount of bags!!</div>
           ) : null}
           <div className="step__buttons-container">
             <button className="btn__step" type="submit">
@@ -353,7 +353,7 @@ const DonateThings = () => {
                 <option value="katowice">Trondheim</option>
               </select>
               {errorThirdStepLocalization ? (
-                <div className="error-message">Please, choose location</div>
+                <div className="error-message-steps">Please, choose location</div>
               ) : null}
             </div>
             <div className="step__3__input-item-container">
@@ -430,7 +430,7 @@ const DonateThings = () => {
           </div>
           <br />
           {errorThirdStepOrganization ? (
-            <div className="error-message">
+            <div className="error-message-steps">
               Enter name and type of an organisation!
             </div>
           ) : null}
@@ -546,7 +546,7 @@ const DonateThings = () => {
           </div>
           <br />
           {errorFourthStep ? (
-            <div className="error-message">Fill out all inputs!</div>
+            <div className="error-message-steps">Fill out all inputs!</div>
           ) : null}
 
           <div className="step__buttons-container">
