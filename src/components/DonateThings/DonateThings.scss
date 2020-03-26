@@ -1,51 +1,41 @@
 .step__info {
-  position: relative;
   height: 7.5rem;
-  width: 100%;
+  width: 100vw;
   display: flex;
+  justify-content: center;
   align-items: center;
+  z-index: 1;
+  background-color: darken($main-yellow, 10%);
+}
 
-  .step__info-content {
-    position: absolute;
-    top: -10%;
-    left: 0;
-    height: 110%;
-    width: 100%;
-    background-color: darken($main-yellow, 10%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.step__info-content-banner {
+  border: 1px solid blue;
+  height: 50%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 
-    .step__info-content-banner {
-      height: 50%;
-      width: 80%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      top: 5px;
+  p {
+    width: 80%;
+    height: auto;
+    font-family: $font-base;
+    font-weight: 300;
+    font-size: 1rem;
+    color: $main-grey-dark;
+    display: block;
+    margin-top: 0.5rem;
+  }
 
-      p {
-        width: 80%;
-        height: auto;
-        font-family: $font-base;
-        font-weight: 300;
-        font-size: 1rem;
-        color: $main-grey-dark;
-        display: block;
-        margin-top: 0.5rem;
-      }
-
-      h1 {
-        margin: 0;
-        width: 80%;
-        height: auto;
-        font-family: $font-base;
-        font-weight: 900;
-        font-size: 1.75rem;
-        color: $main-grey-dark;
-      }
-    }
+  h1 {
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    font-family: $font-base;
+    font-weight: 900;
+    font-size: 1.75rem;
+    color: $main-grey-dark;
   }
 }
 
@@ -178,15 +168,12 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        
 
         .step__3__input-item-container {
-          
           display: flex;
           flex-direction: column;
           width: 50%;
         }
-      
 
         .step__3__input-item-container input {
           width: 50%;
@@ -226,7 +213,6 @@
           width: 50%;
           margin-top: 1rem;
         }
-        
       }
     }
   }
@@ -406,5 +392,5 @@
   color: red;
   font-family: $font-base;
   font-size: 0.75rem;
-  margin-bottom: .75rem;
+  margin-bottom: 0.75rem;
 }

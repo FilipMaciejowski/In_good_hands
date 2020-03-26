@@ -719,13 +719,11 @@ const DonateThings = () => {
     if (step === 1) {
       return (
         <div className="step__info">
-          <div className="step__info-content">
             <div className="step__info-content-banner">
               <h1>Remember!</h1>
               <p>
                 Fill out all details regarding items you would like to donate.
               </p>
-            </div>
           </div>
         </div>
       );
