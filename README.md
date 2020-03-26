@@ -6,6 +6,6 @@ A web-based solution app written in React.js with use of Firebase for those who 
 
 ### `npm install`
 
-Installs node_modules - app will be available in your IDE.
+Installs node_modules - the app will be available in your IDE.
 
 
