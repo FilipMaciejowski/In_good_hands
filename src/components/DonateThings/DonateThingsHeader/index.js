@@ -97,7 +97,7 @@ const DonateThingsHeader = () =>{
           </div>
         </div>
       </div>
-      <div className="home__header-left-side">
+      <div className="donate__header-left-side">
         <img
           src={require("../../../assets/images/Home-Hero-Image1.jpg")}
           alt="unused items header"
