@@ -5,9 +5,9 @@ import React from 'react';
 const DonateThingsHeader = () =>{
   return (
     <div className="home__header-container">
-      <div className="header-right-side">
-        <div className="header-right-side-banner">
-          <div className="banner-top">
+      <div className="donate__header-right-side">
+        <div className="donate__header-right-side-banner">
+          <div className="donate__banner-top">
             <h1>Donate things you do not need!</h1>
             <svg
               className="decoration"
@@ -56,8 +56,8 @@ const DonateThingsHeader = () =>{
             </svg>
             <p>It takes only 4 simple steps!</p>
           </div>
-          <div className="banner-bottom">
-            <div className="banner__bottom-content">
+          <div className="donate__banner-bottom">
+            <div className="donate__banner__bottom-content">
               <div className="step__element">
                 <p className="step__element-text">
                   <b>1</b>
