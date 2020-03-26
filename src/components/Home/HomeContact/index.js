@@ -92,11 +92,6 @@ const HomeContact = () => {
   
   return (
     <div className="contact__container">
-      <div className="contact__left-side">
-        <img
-          src={require("../../../assets/images/Background-Contact-Form.jpg")}
-        />
-      </div>
       {sending ? (
         <div>
           <Loading />
