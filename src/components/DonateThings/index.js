@@ -22,7 +22,7 @@ const itemsToGiveBack = {
   clothesToThrowAway: "Clothes in good condition",
   toys: "Toys",
   books: "Books",
-  anotherThings: "Other things"
+  anotherThings: "Other items"
 };
 
 const people = {
@@ -627,34 +627,56 @@ const DonateThings = () => {
               <h2>You will donate:</h2>
               <div className="donation__summary-items">
                 <img className="logoTshirt" src={Tshirt} alt="tshirtLogo" />
-                {formData.secondStep.bag} Bags, {returnData(true)},{" "}
-                {returnData(false)}{" "}
+                {formData.secondStep.bag === 1 ? "Bag" : "Bags"},{" "}
+                {returnData(true)}, {returnData(false)}{" "}
               </div>
             </div>
             <div className="donation__summary-main">
-              <div className="donation__summary-item">
-                <h2 className="donation__summary-main-header">
-                  Pick-up address
+              <div className="summary__list-wrapper">
+                <h2 className="donation__summary-list-header">
+                  Pick-up address:
                 </h2>
-                
-                  <span>Street</span> <span>{addressData.street}</span>
-                  <span>Town</span>
-                  <span>{addressData.city}</span>
-                  <span>Zip code</span>
-                  <span>{addressData.zipCode}</span>
-                  <span>Telephone number</span>
-                  <span>{addressData.phone}</span>
-           
+                <ul className="donation__summary-list">
+                  <li className="donation__summary-list-item">
+                    <span>Street:</span> <span>{addressData.street}</span>
+                  </li>
+
+                  <li className="donation__summary-list-item">
+                    <span>Town:</span>
+                    <span>{addressData.city}</span>
+                  </li>
+
+                  <li className="donation__summary-list-item">
+                    <span>Zip code:</span>
+                    <span>{addressData.zipCode}</span>
+                  </li>
+
+                  <li className="donation__summary-list-item">
+                    <span>
+                      Telephone
+                      <br />
+                      number:
+                    </span>
+                    <span>{addressData.phone}</span>
+                  </li>
+                </ul>
               </div>
-              <div className="donation__summary-item">
-                <h2 className="donation__summary-main-header">Pick-up date</h2>
-               
-                  <span>Date</span>
-                  <span>{addressData.date}</span>
-                  <span>Hour</span> <span>{addressData.hours}</span>
-                  <span>Comments</span>
-                  <span>{addressData.note}</span>
-                
+              <div className="summary__list-wrapper">
+                <h2 className="donation__summary-list-header">Pick-up date:</h2>
+                <ul className="donation__summary-list">
+                  <li className="donation__summary-list-item">
+                    <span>Date:</span>
+                    <span>{addressData.date}</span>
+                  </li>
+                  <li className="donation__summary-list-item">
+                    <span>Time:</span> <span>{addressData.hours}</span>
+                  </li>
+
+                  <li className="donation__summary-list-item">
+                    <span>Comments:</span>
+                    <span>{addressData.note}</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
