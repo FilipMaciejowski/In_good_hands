@@ -7,9 +7,10 @@ A web-based solution app written in React.js with use of Firebase for those who 
 ### Technology used:
 
 - React.js
-- Redux.js
+- Redux
+- Sass
 - Firebase (for sing up/sign in, retrieving data)
-- Webpack
+
 
 ### `npm install`
 
