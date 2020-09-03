@@ -21,9 +21,7 @@ A web-based solution app written in React.js with use of Firebase for those who 
 - adding goods and uploading important informations to database 
 - showing results from database in the UI layer 
 
-```
-npm install 
-```
+```npm install ```
 
 Installs node_modules in your IDE
 
