@@ -19,7 +19,7 @@ A web-based solution app written in React.js with use of Firebase for those who 
 
 - log-in and log-out of users
 - adding goods and uploading important informations to database 
-- showing results from database in the UI layer 
+- displaying results from database in the UI layer 
 
 ```npm install ```
 
