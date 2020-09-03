@@ -346,11 +346,11 @@ const DonateThings = () => {
                 <option value="" disabled>
                   - Choose -
                 </option>
-                <option value="poznan">Bergen</option>
-                <option value="warszawa">Kristiansand</option>
-                <option value="krakow">Oslo</option>
-                <option value="wroclaw">Stavanger</option>
-                <option value="katowice">Trondheim</option>
+                <option value="Bergen">Bergen</option>
+                <option value="Kristiansand">Kristiansand</option>
+                <option value="Oslo">Oslo</option>
+                <option value="Stavanger">Stavanger</option>
+                <option value="Trondheim">Trondheim</option>
               </select>
               {errorThirdStepLocalization ? (
                 <div className="error-message-steps">Please, choose location</div>

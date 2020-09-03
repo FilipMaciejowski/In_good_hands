@@ -16,7 +16,6 @@ const DonateThingsHeader = () =>{
               height="33"
               viewBox="0 0 253 33"
             >
-              >
               <defs />
               <defs>
                 <clipPath id="a">
