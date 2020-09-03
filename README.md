@@ -11,7 +11,6 @@ A web-based solution app written in React.js with use of Firebase for those who 
 - **React.js**
 - **Redux**
 - **Sass**
-- **JSON-server**
 - **Firebase (for sing up/sign in, retrieving data)**
 
 ```bash
