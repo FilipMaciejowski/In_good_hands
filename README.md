@@ -25,9 +25,7 @@ A web-based solution app written in React.js with use of Firebase for those who 
 
 Installs node_modules in your IDE
 
-```bash
-npm start
-```
+```npm start```
 
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
