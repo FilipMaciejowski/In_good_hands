@@ -1,9 +1,11 @@
 # 🤲 IN GOOD HANDS
 
-
+<div align="center">
+<img src=InGoodhands.png> 
+</div>
 
 ## Description: 
-A web-based solution app written in React.js with use of Firebase for those who want to give away/donate unused items. (Mobile/responsive version: under construction). 
+A web-based solution app written in React.js with use of Firebase for those who want to give away/donate unused items. (Mobile version: under construction). 
 
 ## Technology stack:
 
