@@ -15,6 +15,12 @@ A web-based solution app written in React.js with use of Firebase for those who 
 - **Sass**
 - **Firebase (for sing up/sign in, retrieving data)**
 
+## Features: 
+
+- log-in and log-out of users
+- adding goods and uploading important informations to database 
+- showing results from database 
+
 ```bash
 npm install 
 ```
@@ -30,6 +36,6 @@ Open http://localhost:3000 to view it in the browser.
 
 The page will reload if you make edits.
 You will also see any lint errors in the console.
-ailable in your IDE.
+
 
 
